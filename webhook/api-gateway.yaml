@@ -1,0 +1,124 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "K8S image path mutation webhook"
+
+Resources:
+  apiGateway:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Name: k8s-image-path-webhook
+      Description: K8S image path mutation webhook
+      EndpointConfiguration: 
+        Types: [ REGIONAL ]
+
+  apiGatewayRootMethod:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      AuthorizationType: NONE
+      HttpMethod: POST
+      Integration:
+        IntegrationHttpMethod: POST
+        Type: AWS_PROXY
+        Uri: !Sub
+          - "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${lambdaArn}/invocations"
+          - lambdaArn: !GetAtt lambdaFunction.Arn
+      ResourceId: !GetAtt apiGateway.RootResourceId
+      RestApiId: !Ref apiGateway
+
+  apiGatewayDeployment:
+    Type: AWS::ApiGateway::Deployment
+    DependsOn:
+      - apiGatewayRootMethod
+    Properties:
+      RestApiId: !Ref apiGateway
+      StageName: call
+
+  lambdaFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        ZipFile: |
+          import json
+          import base64
+
+          image_mirrors = {
+            'k8s.gcr.io/': '048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/',
+            'gcr.io/': '048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/',
+            '602401143452.dkr.ecr.us-west-2.amazonaws.com/': '048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/',
+            'quay.io/': '048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/'
+          }
+
+          def handler(event, context):
+            request_body = json.loads(event['body'])
+            json_patch = []
+
+            # get initContainers from request and replace image path with JSON Patch
+            initContainers = dict_get(request_body, 'request.object.spec.initContainers')
+            if initContainers:
+              json_patch += image_patch(initContainers, '/spec/initContainers')
+
+            # get containters from request and replace image path with JSON Patch
+            containers = dict_get(request_body, 'request.object.spec.containers')
+            if containers:
+              json_patch += image_patch(containers, '/spec/containers')
+
+            print(json.dumps(json_patch))
+            # set response body
+            patch_b64 = base64.b64encode(json.dumps(json_patch))
+            response_body = {
+              'response': {
+                'allowed': True,
+                'patch': patch_b64,
+                'patchType': 'JSONPatch'
+              }
+            }
+            
+            return {
+              'body': json.dumps(response_body),
+              'headers': {
+                'Content-Type': 'application/json'
+              },
+              'statusCode': 200
+            }
+
+          def dict_get(dictionary, keys, default=None):
+            return reduce(lambda d, key: d.get(key, default) if isinstance(d, dict) else default, keys.split("."), dictionary)
+
+          def image_patch(containers, path_prefix):
+            json_patch = []
+            for idx, container in enumerate(containers):
+              image = container['image']
+              for orig_image, mirror_image in image_mirrors.iteritems():
+                if image.startswith(orig_image):
+                  image = mirror_image + image[len(orig_image):]
+                  json_patch.append({'op': 'replace', 'path': '%s/%d/image' % (path_prefix, idx), 'value': image})
+            return json_patch
+
+      Handler: index.handler
+      MemorySize: 128
+      Role: !GetAtt lambdaIAMRole.Arn
+      Runtime: python2.7
+      Timeout: 60
+
+  lambdaApiGatewayInvoke:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !GetAtt lambdaFunction.Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub "arn:${AWS::Partition}:execute-api:${AWS::Region}:${AWS::AccountId}:${apiGateway}/*/POST/"
+
+  lambdaIAMRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service: ['lambda.amazonaws.com']
+          Action: ['sts:AssumeRole']
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+
+Outputs:
+  APIGateWayURL:
+    Value: !Sub "https://${apiGateway}.execute-api.${AWS::Region}.${AWS::URLSuffix}/call"

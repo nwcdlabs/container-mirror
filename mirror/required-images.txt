@@ -1,0 +1,11 @@
+#
+# 1. check required-images-mirrored.txt for mirrored image list, 
+#    see https://github.com/nwcdlabs/kops-cn/issues/105 for more details
+# 
+# 2. please add additional required images below
+#
+# Example
+# k8s.gcr.io/coredns:1.3.1
+
+
+gcr.io/google_containers/pause-amd64:3.0
