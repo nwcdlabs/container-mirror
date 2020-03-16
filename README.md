@@ -24,7 +24,7 @@ gcr.io/google_containers/kube-apiserver:v1.12.8对应地址为048912060910.dkr.e
 使用WebHook后，拉取k8s.gcr.io、gcr.io、quay.io镜像时，会自动替换为国内的ECR URI。详细介绍参见 https://github.com/aws-samples/amazon-api-gateway-mutating-webhook-for-k8。  
 EKS用户使用以下命令即可直接使用WebHook。
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/nowfox/container-mirror/master/webhook/mutating-webhook.yaml
+kubectl apply -f https://raw.githubusercontent.com/nwcdlabs/container-mirror/master/webhook/mutating-webhook.yaml
 ```
 然后验证，即可像使用普通地址一样使用。
 ```bash
@@ -40,7 +40,7 @@ kubectl delete deployment test
 由于防火墙或安全限制，需要自己部署WebHook API Gateway的，按以下步骤进行操作。
 1. 修改 [webhook/api-gateway.yaml](./webhook/api-gateway.yaml) 中 image_mirrors 下面的镜像地址您偏好的国内镜像地址，如果使用NWCD labs镜像地址，则不用修改。
 ```bash
-git clone https://github.com/nowfox/container-mirror.git
+git clone https://github.com/nwcdlabs/container-mirror.git
 cd webhook
 vi api-gateway.yaml
 # 
