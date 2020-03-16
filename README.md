@@ -37,7 +37,7 @@ kubectl delete deployment test
 ```
 
 # 自建WebHook API Gateway
-由于安全或访问限制等原因，需要自己部署WebHook API Gateway的，按以下步骤进行操作。
+由于防火墙或安全限制，需要自己部署WebHook API Gateway的，按以下步骤进行操作。
 1. 修改 [webhook/api-gateway.yaml](./webhook/api-gateway.yaml) 中 image_mirrors 下面的镜像地址您偏好的国内镜像地址，如果使用NWCD labs镜像地址，则不用修改。
 ```bash
 git clone https://github.com/nowfox/container-mirror.git
@@ -57,8 +57,7 @@ image_mirrors = {
 ```bash
 kubectl apply -f mutating-webhook.yaml
 ```
-5. 验证
-然后验证，即可像使用普通地址一样使用。
+5. 验证，即可像使用普通地址一样使用。
 ```bash
 kubectl run test --image=k8s.gcr.io/coredns:1.3.1
 kubectl get pods
