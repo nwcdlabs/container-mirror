@@ -5,25 +5,19 @@ ECR_REGION='cn-northwest-1'
 ECR_DN="048912060910.dkr.ecr.${ECR_REGION}.amazonaws.com.cn"
 IMAGES_FILE_LIST='required-images.txt'
 
-function trimDomainName(){
+function replaceDomainName(){
   URI="$1"
-  URI=${URI/k8s.gcr.io\//}
-  URI=${URI/gcr.io\//}
-  URI=${URI/602401143452.dkr.ecr.us-west-2.amazonaws.com\//}
-  URI=${URI/quay.io\//}
-}
-
-function trimDomainNameKops(){
-  trimDomainName $1
-  URI="${URI//\//-}"
-}
-
-function needKops(){
-  if [[ $1 =~ \/ ]]
+  if [[ $URI == quay.io* ]]
   then
-    return 0
+    URI=${URI/#quay.io/quay}
+  elif [[ $URI == gcr.io* ]]
+  then
+    URI=${URI/#gcr.io/gcr}
+  elif [[ $URI == k8s.gcr.io* ]]
+  then
+    URI=${URI/#k8s.gcr.io/gcr\/google_containers}
   else
-    return 1
+    URI="dockerhub/${URI}"
   fi
 }
 
@@ -86,7 +80,7 @@ function pullAndPush(){
   echo "origimg:${origimg}"
   docker pull $origimg
   
-  trimDomainName $origimg
+  replaceDomainName $origimg
   targetImg="$ECR_DN/${URI}"
   
   echo "tagging $origimg to $targetImg"
@@ -103,26 +97,6 @@ function pullAndPush(){
     echo "[PUSH] remote image not exists or digests not match, pushing $targetImg"
     docker push $targetImg
   fi
-
-  #先简单处理，两次push，后续再修改
-  if needKops ${URI};then
-    trimDomainNameKops $origimg
-    targetImgKops="$ECR_DN/${URI}"
-    echo "tagging $origimg to $targetImgKops"
-    docker tag $origimg $targetImgKops
-		
-    echo "getting the digests on $targetImgKops..."
-    digestsKops=$(getLocalImageDigests $targetImgKops)
-    echo "digestsKops:$digestsKops"
-    echo "checking if remote image exists"
-
-    if isRemoteImageExists $targetImgKops $digestsKops;then 
-      echo "[SKIP] image already exists, skip"
-    else
-      echo "[PUSH] remote image not exists or digests not match, pushing $targetImgKops"
-      docker push $targetImgKops
-    fi
-  fi
 }
 
 # list all existing repos
@@ -132,12 +106,8 @@ repos=$(grep -v ^# $IMAGES_FILE_LIST | cut -d: -f1 | sort -u)
 for repo in ${repos[@]}
 do
   # 为同步支持kops，/替换为-和不替换都存放一份
-  trimDomainName $repo
+  replaceDomainName $repo
   createEcrRepo $URI
-  if needKops ${URI};then
-    trimDomainNameKops $repo
-    createEcrRepo $URI
-  fi
 done
 
 # ecr login for the once
