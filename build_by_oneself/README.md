@@ -3,6 +3,9 @@
 当您对方案需要进一步的沟通和反馈后，可以联系 nwcd_labs@nwcdcloud.cn 获得更进一步的支持。  
 欢迎联系参与方案共建和提交方案需求, 也欢迎在 github 项目issue中留言反馈bugs。    
 
+## 介绍
+本文介绍参考本项目进行自建镜像库。
+
 ## 前提条件
 需要AWS China区域和AWS global区域账号。  
 AWS global环境用于拉取容器镜像，然后推送到国内ECR。
