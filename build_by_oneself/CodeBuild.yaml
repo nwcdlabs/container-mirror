@@ -79,6 +79,40 @@ Resources:
       LogsConfig:
         CloudWatchLogs:
           Status: ENABLED
+  StartCodeBuildRole:
+    Type: "AWS::IAM::Role"
+    Properties:
+      RoleName: "codebuild-container-mirror-trigger-service-role"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Principal:
+              Service:
+                - "events.amazonaws.com" 
+            Action: 
+              - "sts:AssumeRole"
+      Path: "/service-role/"
+      Policies:
+        - PolicyName: "CodeBuildContainerMirrorTrigger"
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: "Allow"
+                Action:
+                  - "codebuild:StartBuild"
+                Resource:
+                  - !GetAtt Project.Arn
+  CodeBuildTrigger:
+    Type: AWS::Events::Rule
+    Properties: 
+      Name: "CodeBuildContainerMirrorTrigger"
+      ScheduleExpression: "cron(0 15 ? * * *)"
+      State: "ENABLED"
+      Targets: 
+        - Arn: !GetAtt Project.Arn
+          Id: "CodeBuildContainerMirror"
+          RoleArn: !GetAtt StartCodeBuildRole.Arn
   AKParameter:
     Type: "AWS::SSM::Parameter"
     Properties:

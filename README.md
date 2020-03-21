@@ -30,10 +30,16 @@
 ## 使用方法
 1. 如果您是开发测试或新建项目，可以直接修改引用到原始容器镜像的地方，如修改k8s deployment yaml文件中的image指向ECR中相应image的路径。
 2. 如果项目中用到了Helm Charts，并且chart template支持自定义Pod image，可以设置chart参数指向ECR中相应image的路径。
-3. 如果您的项目直接使用kubectl部署，且kubectl版本在v1.14或以上，可以使用[kustomize](https://kubernetes.io/docs/tasks/manage-kubernetes-objects/kustomization/)讲原始image路径指向ECR中相应image的路径。
+3. 如果您的项目直接使用kubectl部署，且kubectl版本在v1.14或以上，可以使用[kustomize](https://kubernetes.io/docs/tasks/manage-kubernetes-objects/kustomization/)将原始image路径指向ECR中相应image的路径。
 4. 如果您使用了自动部署工具且不方便修改image路径，或者想自动替换所有Pod中image到相应ECR路径，可以使用Kubernetes的[Mutating admission webhook](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#mutatingadmissionwebhook)，本项目中提供了该webhook的参考实现，详细信息请参考改webhook文档(TBD)
 
 ## 增加新的容器镜像
 已有镜像列表放在[required-images-mirrored.txt](./mirror/required-images-mirrored.txt)。 
 如果您在集群创建过程中需要其他镜像, 请您编辑 [required-images.txt](./mirror/required-images.txt) ，这将会在您的GitHub账户中 fork 一个新的分支，之后您可以提交PR（pull request）。 Merge您的PR会触发`CodeBuild` 去拉取 `required-images.txt` 中定义的镜像回ECR库。 几分钟后，您可以看到图标从`in progress`变为`passing`
 ![](https://codebuild.ap-northeast-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoicjlSNndlSGg4ZkJPQXF0Z1hIQnJIaFZES2VvN2tmUllKTjNEemJGeDVKZU5UUUt5eWdWT0Jrd0NZc2xweHROZFV1dEdXNmJLOVZmUGF1Tnl3ZmRSd1ZBPSIsIml2UGFyYW1ldGVyU3BlYyI6Ik5rNkxrdTZnR21GLzl4YzkiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
+
+## 自动同步新镜像
+在[required-images-daily.txt](./mirror/required-images-daily.txt)中的镜像，会自动同步高于指定tag的新镜像，目前仅支持Docker Hub。  
+比如指定 kopeio/etcd-manager:3.0.20200116，会自动同步  
+kopeio/etcd-manager:3.0.20200307  
+kopeio/etcd-manager:latest

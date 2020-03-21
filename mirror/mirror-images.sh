@@ -4,6 +4,7 @@
 ECR_REGION='cn-northwest-1'
 ECR_DN="048912060910.dkr.ecr.${ECR_REGION}.amazonaws.com.cn"
 IMAGES_FILE_LIST='required-images.txt'
+IMAGES_DAILY_FILE_LIST='required-images-daily.txt'
 
 function replaceDomainName(){
   URI="$1"
@@ -105,16 +106,36 @@ echo "allEcrRepos:$allEcrRepos"
 repos=$(grep -v ^# $IMAGES_FILE_LIST | cut -d: -f1 | sort -u)
 for repo in ${repos[@]}
 do
-  # 为同步支持kops，/替换为-和不替换都存放一份
   replaceDomainName $repo
   createEcrRepo $URI
 done
 
 # ecr login for the once
 loginEcr
+
 images=$(grep -v ^# $IMAGES_FILE_LIST)
-# echo ${images//\//-}
 for image in ${images[@]}
 do
   pullAndPush $image
+done
+
+# daily
+function version_ge() {
+  test "$(echo "$@" | tr " " "\n" | sort -rV | head -n 1)" == "$1";
+}
+
+images=$(grep -v ^# $IMAGES_DAILY_FILE_LIST)
+for image in ${images[@]}
+do
+  repo=`echo ${image}|cut -d: -f1`
+  baseTag=`echo ${image}|cut -d: -f2`
+  replaceDomainName $repo
+  createEcrRepo $URI
+  tags=`wget -q https://registry.hub.docker.com/v1/repositories/${repo}/tags -O -  | sed -e 's/[][]//g' -e 's/"//g' -e 's/ //g' | tr '}' '\n'  | awk -F: '{print $3}'`
+  for tag in ${tags}
+  do
+    if version_ge ${tag} $baseTag; then
+      pullAndPush "${repo}:${tag}"
+    fi
+  done
 done

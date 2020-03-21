@@ -7,10 +7,26 @@
 - 如果您在使用Amazon EKS，可跳过检查步骤直接到部署环节。
 - 如果您是自己搭建的k8s，请确保
     - 您的k8s集群版本为1.9或以上.
-    - 8s的MutatingAdmissionWebhook admission controllers 功能已打开
+    - k8s的MutatingAdmissionWebhook admission controllers 功能已打开
     - admissionregistration.k8s.io/v1beta1 API 启用.
 
-### 部署Amazon API Gateway
+
+### 使用托管Amazon API Gateway
+使用以下命令即可直接使用WebHook。
+```bash
+kubectl apply -f https://raw.githubusercontent.com/nwcdlabs/container-mirror/master/webhook/mutating-webhook.yaml
+```
+然后验证，即可像使用普通地址一样使用。
+```bash
+kubectl run test --image=k8s.gcr.io/coredns:1.3.1
+kubectl get pods
+kubectl get pod test-xxxx -o=jsonpath='{.spec.containers[0].image}'
+# 结果应显示为048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/coredns:1.3.1
+# 清理
+kubectl delete deployment test
+```
+
+### 自己部署Amazon API Gateway
 1. 部署新的webhook, 使用CloudFormation模板文件 api-gateway.yaml在AWS CloudFormation界面上部署，使用默认参数即可。
 2. 创建 k8s MutatingWebhookConfiguration资源
     - 在第一步创建的CloudFormation stack完成后，在输出结果中找到 APIGateWayURL。
