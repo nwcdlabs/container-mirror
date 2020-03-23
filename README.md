@@ -39,7 +39,7 @@
 ![](https://codebuild.ap-northeast-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoicjlSNndlSGg4ZkJPQXF0Z1hIQnJIaFZES2VvN2tmUllKTjNEemJGeDVKZU5UUUt5eWdWT0Jrd0NZc2xweHROZFV1dEdXNmJLOVZmUGF1Tnl3ZmRSd1ZBPSIsIml2UGFyYW1ldGVyU3BlYyI6Ik5rNkxrdTZnR21GLzl4YzkiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
 
 ## 自动同步新镜像
-在[required-images-daily.txt](./mirror/required-images-daily.txt)中的镜像，会自动同步高于指定tag的新镜像，目前仅支持Docker Hub。  
-比如指定 kopeio/etcd-manager:3.0.20200116，会自动同步  
+在[required-images-daily.txt](./mirror/required-images-daily.txt)中的镜像，会自动同步高于指定tag的新镜像，tag中包含latest、alpha、beta的不同步。目前仅支持Docker Hub。  
+比如指定kopeio/etcd-manager:3.0.20190930，会自动同步  
+kopeio/etcd-manager:3.0.20200116  
 kopeio/etcd-manager:3.0.20200307  
-kopeio/etcd-manager:latest

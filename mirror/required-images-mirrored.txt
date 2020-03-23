@@ -2,11 +2,14 @@ kope/dns-controller:1.12.0
 kope/dns-controller:1.13.0
 kope/dns-controller:1.15.0
 kope/dns-controller:1.15.2
+kope/dns-controller:1.16.0
 
 kopeio/etcd-manager:1.0.20181001
 kopeio/etcd-manager:3.0.20190516
 kopeio/etcd-manager:3.0.20190801
 kopeio/etcd-manager:3.0.20190930
+kopeio/etcd-manager:3.0.20200116
+kopeio/etcd-manager:3.0.20200307
 
 gcr.io/google_containers/defaultbackend:1.4
 gcr.io/google_containers/etcd:2.2.1
