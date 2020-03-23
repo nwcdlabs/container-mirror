@@ -14,7 +14,7 @@
 ### 使用托管Amazon API Gateway
 使用以下命令即可直接使用WebHook。
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/nwcdlabs/container-mirror/master/webhook/mutating-webhook.yaml
+kubectl apply -f mutating-webhook.yaml
 ```
 然后验证，即可像使用普通地址一样使用。
 ```bash

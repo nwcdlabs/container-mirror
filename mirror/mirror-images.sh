@@ -131,10 +131,11 @@ do
   baseTag=`echo ${image}|cut -d: -f2`
   replaceDomainName $repo
   createEcrRepo $URI
-  tags=`wget -q https://registry.hub.docker.com/v1/repositories/${repo}/tags -O -  | sed -e 's/[][]//g' -e 's/"//g' -e 's/ //g' | tr '}' '\n'  | awk -F: '{print $3}'`
+  tags=`wget -q https://registry.hub.docker.com/v1/repositories/${repo}/tags -O -  | sed -e 's/[][]//g' -e 's/"//g' -e 's/ //g' | tr '}' '\n'  | awk -F: '{print $3}' | grep -v alpha | grep -v beta`
   for tag in ${tags}
   do
-    if version_ge ${tag} $baseTag; then
+    if version_ge ${tag} $baseTag
+    then
       pullAndPush "${repo}:${tag}"
     fi
   done
