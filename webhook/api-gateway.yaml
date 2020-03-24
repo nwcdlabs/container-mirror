@@ -87,6 +87,8 @@ Resources:
                 image = domain_name + "gcr" + image[len("gcr.io"):]
               elif image.startswith("k8s.gcr.io"):
                 image = domain_name + "gcr/google_containers" + image[len("k8s.gcr.io"):]
+              elif image.startswith("docker.io"):
+                image = domain_name + "dockerhub" + image[len("docker.io"):]
               else:
                 image = domain_name + "dockerhub/" + image
               json_patch.append({'op': 'replace', 'path': '%s/%d/image' % (path_prefix, idx), 'value': image})

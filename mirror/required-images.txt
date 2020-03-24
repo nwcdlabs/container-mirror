@@ -7,4 +7,9 @@
 # kope/dns-controller:1.15.2
 # gcr.io/google_containers/kube-apiserver:v1.12.8
 
-k8s.gcr.io/kubernetes-dashboard-amd64:v1.10.1
+amazon/aws-alb-ingress-controller:v1.1.5
+amazon/aws-alb-ingress-controller:v1.1.6
+
+brentley/ecsdemo-nodejs:latest
+brentley/ecsdemo-crystal:latest
+brentley/ecsdemo-frontend:latest
