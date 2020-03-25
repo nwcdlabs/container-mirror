@@ -35,3 +35,7 @@ kubectl delete deployment test
         ```bash
         $ kubectl apply -f mutating-webhook.yaml
         ```
+
+### 引用绝对地址，回源
+使用WebHook后，会把相关地址都转化为ECR仓库地址，但是ECR仓库不是所有的image都有。为了方便使用或回源，使用特殊标识(**nwcdcloud.cn/**)开始的image，会去掉该特殊标识。  
+比如**nwcdcloud.cn/busybox:latest**返回**busybox:latest**，**nwcdcloud.cn/gcr.io/google_containers/pause-amd64:3.0**返回**gcr.io/google_containers/pause-amd64:3.0**。

@@ -81,7 +81,9 @@ Resources:
             domain_name = '048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/'
             for idx, container in enumerate(containers):
               image = container['image']
-              if image.startswith("quay.io"):
+              if image.startswith("nwcdcloud.cn/"):
+                image = image[len("nwcdcloud.cn/"):]
+              elif image.startswith("quay.io"):
                 image = domain_name + "quay" + image[len("quay.io"):]
               elif image.startswith("gcr.io"):
                 image = domain_name + "gcr" + image[len("gcr.io"):]
@@ -89,7 +91,7 @@ Resources:
                 image = domain_name + "gcr/google_containers" + image[len("k8s.gcr.io"):]
               elif image.startswith("docker.io"):
                 image = domain_name + "dockerhub" + image[len("docker.io"):]
-              else:
+              elif "." not in image[:image.find("/")]:
                 image = domain_name + "dockerhub/" + image
               json_patch.append({'op': 'replace', 'path': '%s/%d/image' % (path_prefix, idx), 'value': image})
             return json_patch

@@ -31,7 +31,7 @@
 1. 如果您是开发测试或新建项目，可以直接修改引用到原始容器镜像的地方，如修改k8s deployment yaml文件中的image指向ECR中相应image的路径。
 2. 如果项目中用到了Helm Charts，并且chart template支持自定义Pod image，可以设置chart参数指向ECR中相应image的路径。
 3. 如果您的项目直接使用kubectl部署，且kubectl版本在v1.14或以上，可以使用[kustomize](https://kubernetes.io/docs/tasks/manage-kubernetes-objects/kustomization/)将原始image路径指向ECR中相应image的路径。
-4. 如果您使用了自动部署工具且不方便修改image路径，或者想自动替换所有Pod中image到相应ECR路径，可以使用Kubernetes的[Mutating admission webhook](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#mutatingadmissionwebhook)，本项目中提供了该webhook的参考实现，详细信息请参考改webhook文档(TBD)
+4. 如果您使用了自动部署工具且不方便修改image路径，或者想自动替换所有Pod中image到相应ECR路径，可以使用Kubernetes的[Mutating admission webhook](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#mutatingadmissionwebhook)，本项目中提供了该webhook的参考实现，[点击查看](webhook/README.md)。
 
 ## 增加新的容器镜像
 已有镜像列表放在[required-images-mirrored.txt](./mirror/required-images-mirrored.txt)。 
