@@ -40,6 +40,14 @@ Resources:
           import json
           import base64
 
+          image_mirrors = {
+            'k8s.gcr.io/': '048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/google_containers/',
+            'gcr.io/': '048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/',
+            'quay.io/': '048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/',
+            '/': '048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/',
+            'direct.to/': ''
+          }
+
           def handler(event, context):
             request_body = json.loads(event['body'])
             json_patch = []
@@ -78,21 +86,19 @@ Resources:
 
           def image_patch(containers, path_prefix):
             json_patch = []
-            domain_name = '048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/'
             for idx, container in enumerate(containers):
               image = container['image']
-              if image.startswith("nwcdcloud.cn/"):
-                image = image[len("nwcdcloud.cn/"):]
-              elif image.startswith("quay.io"):
-                image = domain_name + "quay" + image[len("quay.io"):]
-              elif image.startswith("gcr.io"):
-                image = domain_name + "gcr" + image[len("gcr.io"):]
-              elif image.startswith("k8s.gcr.io"):
-                image = domain_name + "gcr/google_containers" + image[len("k8s.gcr.io"):]
-              elif image.startswith("docker.io"):
-                image = domain_name + "dockerhub" + image[len("docker.io"):]
-              elif "." not in image[:image.find("/")]:
-                image = domain_name + "dockerhub/" + image
+              math_mirror=False
+              for orig_image, mirror_image in image_mirrors.iteritems():
+                if image.startswith(orig_image):
+                  math_mirror=True
+                  image = mirror_image + image[len(orig_image):]
+                  break
+              if "/" in image_mirrors and math_mirror==False:
+                if image.startswith("docker.io/"):
+                  image = image_mirrors["/"] + image[len("docker.io/"):]
+                elif "." not in image.split("/")[0]:
+                  image =  image_mirrors["/"] + image
               json_patch.append({'op': 'replace', 'path': '%s/%d/image' % (path_prefix, idx), 'value': image})
             return json_patch
 

@@ -9,7 +9,7 @@ amazon/aws-efs-csi-driver:v0.3.0
 amazon/aws-ebs-csi-driver:v0.4.0
 
 alexwhen/docker-2048:latest
-atlassian/pipelines-awscli
+atlassian/pipelines-awscli:latest
 
 bitnami/nginx:1.16.1-debian-10-r57
 
