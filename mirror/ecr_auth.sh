@@ -14,6 +14,6 @@ env
 #echo $sk
 echo "foo=$foo"
 
-aws configure --profile=china set aws_access_key_id $ak
-aws configure --profile=china set aws_secret_access_key $sk
-aws configure --profile=china set default.region cn-northwest-1
+aws configure --profile=China set aws_access_key_id $ak
+aws configure --profile=China set aws_secret_access_key $sk
+aws configure --profile=China set default.region cn-northwest-1

@@ -28,14 +28,14 @@ function createEcrRepo() {
     echo "repo: $1 already exists"
   else
     echo "creating repo: $1"
-    aws --profile=china --region ${ECR_REGION} ecr create-repository --repository-name "$1"    
+    aws --profile=China --region ${ECR_REGION} ecr create-repository --repository-name "$1"    
     attachPolicy "$1"
   fi
 }
 
 function attachPolicy() {
   echo "attaching public-read policy on ECR repo: $1"
-  aws --profile china --region $ECR_REGION ecr set-repository-policy --policy-text file://policy.text --repository-name "$1"
+  aws --profile China --region $ECR_REGION ecr set-repository-policy --policy-text file://policy.text --repository-name "$1"
 }
 
 function isRemoteImageExists(){
@@ -43,7 +43,7 @@ function isRemoteImageExists(){
   fullrepo=${1#*/}
   repoName=${fullrepo%%:*}
   tag=${fullrepo##*:}
-  res=$(aws --profile china --region $ECR_REGION ecr describe-images --repository-name "$repoName" --query "imageDetails[?(@.imageDigest=='$2')].contains(@.imageTags, '$tag') | [0]")
+  res=$(aws --profile China --region $ECR_REGION ecr describe-images --repository-name "$repoName" --query "imageDetails[?(@.imageDigest=='$2')].contains(@.imageTags, '$tag') | [0]")
 
   if [ "$res" == "true" ]; then 
     return 0 
@@ -71,8 +71,8 @@ function inArray() {
 }
 
 function loginEcr() {
-  aws --profile=china ecr --region cn-northwest-1 get-login --no-include-email | sh
-  #aws --profile=china ecr --region cn-north-1 get-login --no-include-email | sh
+  aws --profile=China ecr --region cn-northwest-1 get-login --no-include-email | sh
+  #aws --profile=China ecr --region cn-north-1 get-login --no-include-email | sh
   aws ecr get-login --region us-west-2 --registry-ids 602401143452 894847497797 --no-include-email | sh
 }
 
@@ -101,7 +101,7 @@ function pullAndPush(){
 }
 
 # list all existing repos
-allEcrRepos=$(aws --profile=china --region $ECR_REGION ecr describe-repositories --query 'repositories[*].repositoryName' --output text)
+allEcrRepos=$(aws --profile=China --region $ECR_REGION ecr describe-repositories --query 'repositories[*].repositoryName' --output text)
 echo "allEcrRepos:$allEcrRepos"
 repos=$(grep -v ^# $IMAGES_FILE_LIST | cut -d: -f1 | sort -u)
 for repo in ${repos[@]}
