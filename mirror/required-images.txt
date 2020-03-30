@@ -6,6 +6,7 @@
 # Example
 # kope/dns-controller:1.15.2
 # gcr.io/google_containers/kube-apiserver:v1.12.8
+k8s.gcr.io/echoserver:1.4
 
 
 
