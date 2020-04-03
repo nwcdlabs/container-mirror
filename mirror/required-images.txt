@@ -8,5 +8,15 @@
 # gcr.io/google_containers/kube-apiserver:v1.12.8
 k8s.gcr.io/echoserver:1.4
 
+# required for container insights with Amazon EKS
+# see https://amzn.to/3aG4cy7
+# images defined in https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/quickstart/cwagent-fluentd-quickstart.yaml
+amazon/cloudwatch-agent:1.231221.0
+busybox:latest
+fluent/fluentd-kubernetes-daemonset:v1.7.3-debian-cloudwatch-1.0
+
+
+
+
 
 
