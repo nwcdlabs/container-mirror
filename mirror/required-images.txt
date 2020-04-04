@@ -4,21 +4,14 @@
 # 2. please add additional required images below
 #
 # Example
-# kope/dns-controller:1.15.2
-# gcr.io/google_containers/kube-apiserver:v1.12.8
-k8s.gcr.io/echoserver:1.4
+#
+## name - aws/node-termination-handler for Amazon EKS
+## see - https://github.com/aws/aws-node-termination-handler
+## images defined - https://github.com/aws/aws-node-termination-handler/blob/79bf81f618de474f86636120a40438a47a4e2869/config/helm/aws-node-termination-handler/values.yaml#L5-L7
+#amazon/aws-node-termination-handler:v1.3.1
 
-# name - aws/node-termination-handler for Amazon EKS
-# see - https://github.com/aws/aws-node-termination-handler
-# images defined - https://github.com/aws/aws-node-termination-handler/blob/79bf81f618de474f86636120a40438a47a4e2869/config/helm/aws-node-termination-handler/values.yaml#L5-L7
-amazon/aws-node-termination-handler:v1.3.1
 
-# name - container insights with Amazon EKS
-# see - https://amzn.to/3aG4cy7
-# images defined - https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/quickstart/cwagent-fluentd-quickstart.yaml
-amazon/cloudwatch-agent:1.231221.0
-busybox:latest
-fluent/fluentd-kubernetes-daemonset:v1.7.3-debian-cloudwatch-1.0
+
 
 
 

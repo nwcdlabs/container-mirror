@@ -18,24 +18,23 @@ kubectl apply -f mutating-webhook.yaml
 ```
 然后验证，即可像使用普通地址一样使用。
 ```bash
-kubectl run test --image=k8s.gcr.io/coredns:1.3.1
-kubectl get pods
-kubectl get pod test-xxxx -o=jsonpath='{.spec.containers[0].image}'
-# 结果应显示为048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/coredns:1.3.1
+kubectl run --generator=run-pod/v1 test --image=k8s.gcr.io/coredns:1.3.1
+kubectl get pod test -o=jsonpath='{.spec.containers[0].image}'
+# 结果应显示为048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/google_containers/coredns:1.3.1
 # 清理
-kubectl delete deployment test
+kubectl delete pod test
 ```
 
 ### 自己部署Amazon API Gateway
 1. 部署新的webhook, 使用CloudFormation模板文件 api-gateway.yaml在AWS CloudFormation界面上部署，使用默认参数即可。
 2. 创建 k8s MutatingWebhookConfiguration资源
     - 在第一步创建的CloudFormation stack完成后，在输出结果中找到 APIGateWayURL。
-    - 修改 mutating-webhook.yaml，讲 <WEB-HOOK-URL> 替换为上面找到的APIGateWayURL值。
+    - 修改 mutating-webhook.yaml，将 webhooks.clientConfig.url 的值替换为上面找到的APIGateWayURL值。
     - 创建 K8S resource:
         ```bash
         $ kubectl apply -f mutating-webhook.yaml
         ```
 
 ### 引用绝对地址，回源
-使用WebHook后，会把相关地址都转化为ECR仓库地址，但是ECR仓库不是所有的image都有。为了方便使用或回源，使用特殊标识(**direct.to/**)开始的image，会去掉该特殊标识。  
+  使用WebHook后，会把相关地址都转化为ECR仓库地址，但是ECR仓库没有同步所有的image。为了方便使用或回源，使用特殊标识(**direct.to/**)开始的image，会去掉该特殊标识。  
 比如**direct.to/busybox:latest**返回**busybox:latest**，**direct.to/gcr.io/google_containers/pause-amd64:3.0**返回**gcr.io/google_containers/pause-amd64:3.0**。
