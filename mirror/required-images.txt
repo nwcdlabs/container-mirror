@@ -16,9 +16,8 @@ prom/pushgateway:v1.0.1
 prom/prometheus:v2.16.0
 jimmidyson/configmap-reload:v0.3.0
 quay.io/coreos/kube-state-metrics:v1.9.5
-grafana/grafana:6.6.2
-
-
+prom/node-exporter:v0.18.1
+grafana/grafana:6.7.1
 
 
 
