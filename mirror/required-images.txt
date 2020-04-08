@@ -19,5 +19,7 @@ quay.io/coreos/kube-state-metrics:v1.9.5
 prom/node-exporter:v0.18.1
 grafana/grafana:6.7.1
 
+#Fluentd-Cloudwatch image
+fluent/fluentd-kubernetes-daemonset:v1.1-debian-cloudwatch
 
 
