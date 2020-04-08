@@ -106,3 +106,9 @@ quay.io/k8scsi/csi-node-driver-registrar:v1.1.0
 quay.io/k8scsi/csi-provisioner:v1.3.0
 quay.io/k8scsi/livenessprobe:v1.1.0
 quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.20.0
+grafana/grafana:6.5.2
+docker.io/istio/proxyv2:1.5.1
+docker.io/jaegertracing/all-in-one:1.16
+docker.io/istio/pilot:1.5.1
+quay.io/kiali/kiali:v1.15
+docker.io/prom/prometheus:v2.15.1
