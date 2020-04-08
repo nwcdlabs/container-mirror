@@ -10,14 +10,6 @@
 ## images defined - https://github.com/aws/aws-node-termination-handler/blob/79bf81f618de474f86636120a40438a47a4e2869/config/helm/aws-node-termination-handler/values.yaml#L5-L7
 #amazon/aws-node-termination-handler:v1.3.1
 
-#Prometheus & Grafana needed
-prom/alertmanager:v0.20.0
-prom/pushgateway:v1.0.1
-prom/prometheus:v2.16.0
-jimmidyson/configmap-reload:v0.3.0
-quay.io/coreos/kube-state-metrics:v1.9.5
-prom/node-exporter:v0.18.1
-grafana/grafana:6.7.1
 
 
 
