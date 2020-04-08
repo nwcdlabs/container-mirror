@@ -19,3 +19,7 @@ docker.io/istio/pilot:1.5.1
 quay.io/kiali/kiali:v1.15
 docker.io/prom/prometheus:v2.15.1
 
+# kube flow 1.0.1 needed
+gcr.io/kubeflow-images-public/kubernetes-sigs/application:1.0-beta
+quay.io/jetstack/cert-manager-cainjector:v0.11.0
+
