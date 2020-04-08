@@ -10,25 +10,11 @@
 ## images defined - https://github.com/aws/aws-node-termination-handler/blob/79bf81f618de474f86636120a40438a47a4e2869/config/helm/aws-node-termination-handler/values.yaml#L5-L7
 #amazon/aws-node-termination-handler:v1.3.1
 
-#Prometheus & Grafana needed
-prom/alertmanager:v0.20.0
-prom/pushgateway:v1.0.1
-prom/prometheus:v2.16.0
-jimmidyson/configmap-reload:v0.3.0
-quay.io/coreos/kube-state-metrics:v1.9.5
-prom/node-exporter:v0.18.1
-grafana/grafana:6.7.1
 
-# Istio 1.5.1 needed
-grafana/grafana:6.5.2
-docker.io/istio/proxyv2:1.5.1
-docker.io/jaegertracing/all-in-one:1.16
-docker.io/istio/pilot:1.5.1
-quay.io/kiali/kiali:v1.15
-docker.io/prom/prometheus:v2.15.1
 docker.io/istio/examples-bookinfo-details-v1:1.15.0
 docker.io/istio/examples-bookinfo-productpage-v1:1.15.0
 docker.io/istio/examples-bookinfo-ratings-v1:1.15.0
 docker.io/istio/examples-bookinfo-reviews-v1:1.15.0
 docker.io/istio/examples-bookinfo-reviews-v2:1.15.0
 docker.io/istio/examples-bookinfo-reviews-v3:1.15.0
+

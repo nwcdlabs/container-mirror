@@ -17,6 +17,9 @@ function replaceDomainName(){
   elif [[ $URI == k8s.gcr.io* ]]
   then
     URI=${URI/#k8s.gcr.io/gcr\/google_containers}
+  elif [[ $URI == docker.io* ]]
+  then
+    URI=${URI/#docker.io/dockerhub}
   else
     URI="dockerhub/${URI}"
   fi
