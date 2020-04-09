@@ -11,11 +11,7 @@
 #amazon/aws-node-termination-handler:v1.3.1
 
 
-# Istio 1.5.1 needed
-grafana/grafana:6.5.2
-docker.io/istio/proxyv2:1.5.1
-docker.io/jaegertracing/all-in-one:1.16
-docker.io/istio/pilot:1.5.1
-quay.io/kiali/kiali:v1.15
-docker.io/prom/prometheus:v2.15.1
+# kubeflow 1.0.1 needed
+gcr.io/kubeflow-images-public/admission-webhook:v1.0.0-gaf96e4e3
+gcr.io/kubeflow-images-public/kfam:v1.0.0-gf3e09203
 
