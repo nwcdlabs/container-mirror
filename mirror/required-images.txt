@@ -12,7 +12,6 @@
 
 
 
-# kubeflow 1.0.1 needed
-gcr.io/kubeflow-ci/tf-dist-mnist-test:1.0
 
+gcr.io/kubeflow-ci/tf-dist-mnist-test:1.0
 
