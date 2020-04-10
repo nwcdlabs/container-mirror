@@ -11,7 +11,8 @@
 #amazon/aws-node-termination-handler:v1.3.1
 
 
-
+quay.io/k8scsi/csi-snapshotter:v2.0.1
+quay.io/k8scsi/csi-resizer:v0.3.0
 
 gcr.io/kubeflow-ci/tf-dist-mnist-test:1.0
 
