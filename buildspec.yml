@@ -14,7 +14,7 @@ phases:
   pre_build:
     commands:
       - echo "authenticate to Amazon ECR(cn-northwest-1)"
-      - bash ./mirror/ecr_auth.sh
+      - bash ./mirror/ECR_Auth.sh
   build:
     commands:
       - cd mirror; bash mirror-images.sh

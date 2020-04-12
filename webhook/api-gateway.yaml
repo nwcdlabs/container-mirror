@@ -97,7 +97,7 @@ Resources:
               if "/" in image_mirrors and math_mirror==False:
                 if image.startswith("docker.io/"):
                   image = image_mirrors["/"] + image[len("docker.io/"):]
-                elif "." not in image.split("/")[0]:
+                elif ("." not in image.split("/")[0]) or ("/" not in image):
                   image =  image_mirrors["/"] + image
               json_patch.append({'op': 'replace', 'path': '%s/%d/image' % (path_prefix, idx), 'value': image})
             return json_patch

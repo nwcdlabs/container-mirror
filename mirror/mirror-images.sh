@@ -76,7 +76,7 @@ function inArray() {
 function loginEcr() {
   aws --profile=China ecr --region cn-northwest-1 get-login --no-include-email | sh
   #aws --profile=China ecr --region cn-north-1 get-login --no-include-email | sh
-  aws ecr get-login --region us-west-2 --registry-ids 602401143452 894847497797 --no-include-email | sh
+  #aws ecr get-login --region us-west-2 --registry-ids 602401143452 894847497797 --no-include-email | sh
 }
 
 function pullAndPush(){
@@ -104,7 +104,7 @@ function pullAndPush(){
 }
 
 # list all existing repos
-allEcrRepos=$(aws --profile=China --region $ECR_REGION ecr describe-repositories --query 'repositories[*].repositoryName' --output text)
+allEcrRepos=$(aws --profile=China --region $ECR_REGION ecr describe-repositories --query 'repositories[*].repositoryName' --page-size 1000 --output text)
 echo "allEcrRepos:$allEcrRepos"
 repos=$(grep -v ^# $IMAGES_FILE_LIST | cut -d: -f1 | sort -u)
 for repo in ${repos[@]}
@@ -134,7 +134,7 @@ do
   baseTag=`echo ${image}|cut -d: -f2`
   replaceDomainName $repo
   createEcrRepo $URI
-  tags=`wget -q https://registry.hub.docker.com/v1/repositories/${repo}/tags -O -  | sed -e 's/[][]//g' -e 's/"//g' -e 's/ //g' | tr '}' '\n'  | awk -F: '{print $3}' | grep -v latest | grep -v alpha | grep -v beta`
+  tags=`wget -q https://registry.hub.docker.com/v1/repositories/${repo}/tags -O -  | sed -e 's/[][]//g' -e 's/"//g' -e 's/ //g' | tr '}' '\n'  | awk -F: '{print $3}' | grep -v alpha | grep -v beta`
   for tag in ${tags}
   do
     if version_ge ${tag} $baseTag

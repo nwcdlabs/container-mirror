@@ -10,13 +10,3 @@
 ## images defined - https://github.com/aws/aws-node-termination-handler/blob/79bf81f618de474f86636120a40438a47a4e2869/config/helm/aws-node-termination-handler/values.yaml#L5-L7
 #amazon/aws-node-termination-handler:v1.3.1
 
-
-quay.io/k8scsi/csi-snapshotter:v2.0.1
-quay.io/k8scsi/csi-resizer:v0.3.0
-
-gcr.io/kubeflow-ci/tf-dist-mnist-test:1.0
-quay.io/external_storage/efs-provisioner:latest
-
-#need by kubeflow
-quay.io/jetstack/cert-manager-controller:v0.11.0
-quay.io/jetstack/cert-manager-webhook:v0.11.0
