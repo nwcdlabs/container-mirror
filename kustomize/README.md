@@ -68,5 +68,5 @@ spec:
 
 ## 步骤5.验证
 运行kubectl get pod查看pod运行情况。  
-运行kubectl get pod my-nginx-59d6c49565-29mt8 -o=jsonpath='{.spec.containers[0].image}'  
+运行kubectl get pod my-nginx-xxxxxx-xxxx -o=jsonpath='{.spec.containers[0].image}'  
 结果应该为048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/nginx:1.17
