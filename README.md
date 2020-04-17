@@ -46,9 +46,13 @@ kopeio/etcd-manager:3.0.20200307
 
 ## ECR登录/docker login
 EKS、Kops on EC2用户可直接使用，无需手动处理。  
-对于docker用户，需要login后才能使用。
+对于docker用户，需要login后才能使用：
 ```
 aws ecr get-login-password --region cn-northwest-1 | docker login --username AWS --password-stdin 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn
+```
+如果AWS CLI版本低于v1.17.10，需运行以下脚本：
+```
+aws ecr get-login --region cn-northwest-1 --registry-ids 048912060910 --no-include-email | sh
 ```
 执行此命令的用户需要具有以下权限
 ```

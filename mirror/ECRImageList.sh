@@ -18,11 +18,13 @@ function replaceDomainName(){
 allEcrRepos=$(echo $allEcrRepos | tr " " "\n" | sort) 
 for repo in $allEcrRepos
 do
-  tags=$(aws --profile China --region $ECR_REGION ecr describe-images --repository-name $repo |jq -r ".imageDetails[]|.imageTags[]")
+  tags=$(aws --profile China --region $ECR_REGION ecr list-images --repository-name $repo |jq -r ".imageIds[]|.imageTag")
   tags=$(echo $tags | tr " " "\n" | sort) 
   for tag in $tags
   do
-    replaceDomainName "${repo}:${tag}"
-	echo $URI
+    if [ "$tag" != "null" ]; then
+      replaceDomainName "${repo}:${tag}"
+	  echo $URI >> 1.txt
+	fi
   done
 done
