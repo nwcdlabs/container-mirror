@@ -43,3 +43,19 @@
 比如指定kopeio/etcd-manager:3.0.20190930，会自动同步  
 kopeio/etcd-manager:3.0.20200116  
 kopeio/etcd-manager:3.0.20200307  
+
+## ECR登录/docker login
+EKS、Kops on EC2用户可直接使用，无需手动处理。  
+对于docker用户，需要login后才能使用。
+```
+aws ecr get-login-password --region cn-northwest-1 | docker login --username AWS --password-stdin 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn
+```
+执行此命令的用户需要具有以下权限
+```
+"Action": [
+                "ecr:GetDownloadUrlForLayer",
+                "ecr:BatchGetImage",
+                "ecr:GetAuthorizationToken",
+                "ecr:BatchCheckLayerAvailability"
+            ]
+```
