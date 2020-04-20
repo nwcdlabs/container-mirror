@@ -12,5 +12,8 @@
 gcr.io/google-containers/vpa-updater:0.6.3
 gcr.io/google-containers/vpa-recommender:0.6.3
 gcr.io/google-containers/vpa-admission-controller:0.6.3
+k8s.gcr.io/cluster-autoscaler:v1.15.5
+k8s.gcr.io/ubuntu-slim:0.1
+
 
 
