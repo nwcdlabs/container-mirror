@@ -35,8 +35,11 @@
 
 ## 增加新的容器镜像
 已有镜像列表放在[mirrored-images.txt](./mirror/mirrored-images.txt)。 
-如果您在集群创建过程中需要其他镜像, 请您编辑 [required-images.txt](./mirror/required-images.txt) ，这将会在您的GitHub账户中 fork 一个新的分支，之后您可以提交PR（pull request）。 Merge您的PR会触发`CodeBuild` 去拉取 `required-images.txt` 中定义的镜像回ECR库。 几分钟后，您可以看到图标从`in progress`变为`passing`
+如果您需要其他镜像, 请您编辑 [required-images.txt](./mirror/required-images.txt) ，这将会在您的GitHub账户中 fork 一个新的分支，之后您可以提交PR（pull request）。 
+Merge您的PR会触发`CodeBuild` 去拉取 `required-images.txt` 中定义的镜像回ECR库。 几分钟后，您可以看到图标从`in progress`变为`passing`
 ![](https://codebuild.ap-northeast-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoicjlSNndlSGg4ZkJPQXF0Z1hIQnJIaFZES2VvN2tmUllKTjNEemJGeDVKZU5UUUt5eWdWT0Jrd0NZc2xweHROZFV1dEdXNmJLOVZmUGF1Tnl3ZmRSd1ZBPSIsIml2UGFyYW1ldGVyU3BlYyI6Ik5rNkxrdTZnR21GLzl4YzkiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
+
+详细说明请参考[增加新的容器镜像帮助文档](docs/how-to-request-new-container-image.md)
 
 ## 自动同步新镜像
 在[required-images-daily.txt](./mirror/required-images-daily.txt)中的镜像，会自动同步高于指定tag的新镜像，tag中包含alpha、beta的不同步。目前仅支持Docker Hub。  
