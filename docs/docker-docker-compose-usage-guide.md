@@ -18,12 +18,12 @@ EKS、Kops on EC2用户可直接使用，无需 ECR登录/docker login。
 对于docker用户，需要 ECR 登录/docker login 后才能使用：
 ```bash
 pip install awscli --upgrade --user
-aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn
+aws ecr get-login-password --region cn-northwest-1 | docker login --username AWS --password-stdin 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn
 ```
 
 如果AWS CLI版本低于v1.17.10，需运行以下脚本：
 ```bash
-aws ecr get-login --region ${AWS_REGION} --registry-ids 048912060910 --no-include-email | sh
+aws ecr get-login --region cn-northwest-1 --registry-ids 048912060910 --no-include-email | sh
 ```
 
 您也可以使用[ecr-credential-helper](https://github.com/awslabs/amazon-ecr-credential-helper) 完成登录。
