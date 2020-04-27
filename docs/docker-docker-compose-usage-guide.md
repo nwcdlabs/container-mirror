@@ -7,12 +7,12 @@ EKS、Kops on EC2用户可直接使用，无需 ECR登录/docker login。
 
 确定你执行命令的IAM user / IAM role拥有下面权限：
 ```json
-{
+[
     "ecr:GetDownloadUrlForLayer",
     "ecr:BatchGetImage",
     "ecr:GetAuthorizationToken",
     "ecr:BatchCheckLayerAvailability"
-}
+]
 ```
 
 对于docker用户，需要 ECR 登录/docker login 后才能使用：

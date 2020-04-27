@@ -15,7 +15,7 @@
 
     2. 使用Helm Charts
         
-        利用 Helm Charts 部署应用，并且chart template支持自定义Pod image，可以设置 chart 参数，指向本项目 ECR 中相应镜像的路径，[点击查看如何使用示例](helm-chat-useage-guide.md)。
+        利用 Helm Charts 部署应用，并且chart template支持自定义Pod image，可以设置 chart 参数，指向本项目 ECR 中相应镜像的路径，[点击查看如何使用示例](helm-chart-useage-guide.md)。
 
     3. 直接修改 kubernetes deployment yaml 文件
     

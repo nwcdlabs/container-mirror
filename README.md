@@ -32,7 +32,7 @@
 
 1. 直接修改 kubernetes deployment yaml 文件中的 image 指向本项目 ECR 中相应镜像的路径。
 2. 不方便修改 image 路径，或者想自动替换所有 Kubernetes Pod 中 image 到相应 ECR 路径，可以使用Kubernetes的[Mutating admission webhook](webhook/README.md) 实现自动替换。
-3. 利用 Helm Charts 部署应用，并且chart template支持自定义Pod image，可以设置 chart 参数，指向本项目 ECR 中相应镜像的路径。[点击查看如何使用示例](docs/helm-chat-useage-guide.md)
+3. 利用 Helm Charts 部署应用，并且chart template支持自定义Pod image，可以设置 chart 参数，指向本项目 ECR 中相应镜像的路径。[点击查看如何使用示例](docs/helm-chart-useage-guide.md)
 4. 如果您的 kubernetes 集群直接使用 kubectl 部署，且kubectl版本在v1.14或以上，可以使用[kustomize](kustomize/README.md) 将原始 image 路径指向指向本项目 ECR 中相应镜像的路径。
 5. 直接 修改 ECS/Fargate 的 task defition yaml 文件，用于部署 ECS/Fargate Service和Task。[点击查看如何使用示例](docs/ecs-fargate-useage-guide.md)
 6. Docker 和 docker-compose, 直接修改文件中的 image 指向本项目 ECR 中相应镜像的路径。[点击查看示例](docs/docker-docker-compose-usage-guide.md)
@@ -57,12 +57,12 @@ EKS、Kops on EC2用户可直接使用，无需 ECR登录/docker login。
 
 1. 确定你执行命令的 IAM user / IAM role 拥有下面权限：
 ```json
-{
+[
     "ecr:GetDownloadUrlForLayer",
     "ecr:BatchGetImage",
     "ecr:GetAuthorizationToken",
     "ecr:BatchCheckLayerAvailability"
-}
+]
 ```
 
 2. 对于docker用户，执行 ECR 登录/docker login：
