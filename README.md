@@ -34,6 +34,7 @@
 2. 不方便修改 image 路径，或者想自动替换所有 Kubernetes Pod 中 image 到相应 ECR 路径，可以使用Kubernetes的[Mutating admission webhook](webhook/README.md) 实现自动替换。
 3. 利用 Helm Charts 部署应用，并且chart template支持自定义Pod image，可以设置 chart 参数，指向本项目 ECR 中相应镜像的路径。
 4. 如果您的 kubernetes 集群直接使用 kubectl 部署，且kubectl版本在v1.14或以上，可以使用[kustomize](kustomize/README.md) 将原始 image 路径指向指向本项目 ECR 中相应镜像的路径。
+5. Docker 和 docker-compose, 直接修改文件中的 image 指向本项目 ECR 中相应镜像的路径。[点击查看示例](docker-docker-compose-usage-guide.md)
 
 ## 增加新的容器镜像
 已有镜像列表放在[mirrored-images.txt](./mirror/mirrored-images.txt)。 
@@ -50,21 +51,28 @@ kopeio/etcd-manager:3.0.20200116
 kopeio/etcd-manager:3.0.20200307  
 
 ## ECR登录/docker login
-EKS、Kops on EC2用户可直接使用，无需手动处理。  
-对于docker用户，需要login后才能使用：
+EKS、Kops on EC2用户可直接使用，无需 ECR登录/docker login。
+对于docker用户，需要 ECR 登录/docker login 后才能使用。
+
+1. 确定你执行命令的 IAM user / IAM role 拥有下面权限：
+```json
+{
+    "ecr:GetDownloadUrlForLayer",
+    "ecr:BatchGetImage",
+    "ecr:GetAuthorizationToken",
+    "ecr:BatchCheckLayerAvailability"
+}
 ```
-aws ecr get-login-password --region cn-northwest-1 | docker login --username AWS --password-stdin 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn
+
+2. 对于docker用户，执行 ECR 登录/docker login：
+```bash
+pip install awscli --upgrade --user
+aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn
 ```
+
 如果AWS CLI版本低于v1.17.10，需运行以下脚本：
+```bash
+aws ecr get-login --region ${AWS_REGION} --registry-ids 048912060910 --no-include-email | sh
 ```
-aws ecr get-login --region cn-northwest-1 --registry-ids 048912060910 --no-include-email | sh
-```
-执行此命令的用户需要具有以下权限
-```
-"Action": [
-                "ecr:GetDownloadUrlForLayer",
-                "ecr:BatchGetImage",
-                "ecr:GetAuthorizationToken",
-                "ecr:BatchCheckLayerAvailability"
-            ]
-```
+
+您也可以使用[ecr-credential-helper](https://github.com/awslabs/amazon-ecr-credential-helper) 完成登录。
