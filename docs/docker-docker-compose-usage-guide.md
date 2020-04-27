@@ -1,6 +1,6 @@
 # docker 和 docker-compose
 
-直接修改文件中的 image 指向本项目 ECR 中相应镜像的路径，这里以部署 xwiki 为例
+直接修改文件中的 image 指向本项目 ECR 中相应镜像的路径，这里以 Docker 部署 xwiki 为例
 
 ## ECR登录/docker login
 EKS、Kops on EC2用户可直接使用，无需 ECR登录/docker login。
