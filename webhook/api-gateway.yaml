@@ -43,7 +43,11 @@ Resources:
           image_mirrors = {
             'k8s.gcr.io/': '048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/google_containers/',
             'gcr.io/': '048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/',
+            'asia.gcr.io/': '048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/',
+            'eu.gcr.io/': '048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/',
+            'us.gcr.io/': '048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/',
             'quay.io/': '048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/',
+            '602401143452.dkr.ecr.us-west-2.amazonaws.com/': '048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/amazonecr/',
             '/': '048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/',
             'direct.to/': ''
           }

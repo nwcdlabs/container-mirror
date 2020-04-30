@@ -16,7 +16,10 @@
     * ECR镜像路径: 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/google_containers/repo:tag
 * **Quay**
     * 原始镜像路径: quay.io/namespace/repo:tag
-    * ECR镜像路径: 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/namespace/repo:tag 
+    * ECR镜像路径: 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/namespace/repo:tag
+* **Global ECR**
+    * 原始镜像路径: 602401143452.dkr.ecr.us-west-2.amazonaws.com/repo:tag
+    * ECR镜像路径: 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/amazonecr/repo:tag 
 
 海外镜像复制到ECR后的路径转换示例如下：
 
@@ -26,6 +29,7 @@
 | gcr.io/heptio-images/velero:v1.1.0 | 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/heptio-images/velero:v1.1.0 |
 | k8s.gcr.io/cluster-autoscaler:v1.2.2 | 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/google_containers/cluster-autoscaler:v1.2.2 |
 | quay.io/calico/node:v3.7.4 | 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/calico/node:v3.7.4 |
+| 602401143452.dkr.ecr.us-west-2.amazonaws.com/amazon-k8s-cni:v1.5.5 | 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/amazonecr/amazon-k8s-cni:v1.5.5 |
 
 ## 使用方法
 [使用方法帮助文档](docs/container-mirror-usage-guide.md)

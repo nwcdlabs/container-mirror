@@ -9,11 +9,6 @@
 ## see - https://github.com/aws/aws-node-termination-handler
 ## images defined - https://github.com/aws/aws-node-termination-handler/blob/79bf81f618de474f86636120a40438a47a4e2869/config/helm/aws-node-termination-handler/values.yaml#L5-L7
 #amazon/aws-node-termination-handler:v1.3.1
-gcr.io/google-containers/vpa-updater:0.6.3
-gcr.io/google-containers/vpa-recommender:0.6.3
-gcr.io/google-containers/vpa-admission-controller:0.6.3
-k8s.gcr.io/cluster-autoscaler:v1.15.5
-k8s.gcr.io/ubuntu-slim:0.1
-gcr.io/k8s-artifacts-prod/external-dns/external-dns:v0.7.1
+
 
 

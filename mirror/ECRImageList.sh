@@ -12,6 +12,7 @@ function replaceDomainName(){
   URI="$1"
   URI=${URI/#quay/quay.io}
   URI=${URI/#gcr/gcr.io}
+  URI=${URI/#amazonecr/602401143452.dkr.ecr.us-west-2.amazonaws.com}
   URI=${URI/#dockerhub\//}
 }
 
