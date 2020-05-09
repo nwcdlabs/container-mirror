@@ -117,13 +117,13 @@ Resources:
   AKParameter:
     Type: "AWS::SSM::Parameter"
     Properties:
-      Name: "china-ak"
+      Name: "China-ECR-AK"
       Type: "String"
       Value: !Ref AWSChinaAK
   SKParameter:
     Type: "AWS::SSM::Parameter"
     Properties:
-      Name: "china-sk"
+      Name: "China-ECR-SK"
       Type: "String"
       Value: !Ref AWSChinaSK
 Parameters:
