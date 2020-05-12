@@ -26,4 +26,20 @@ nvidia/k8s-device-plugin:1.0.0-beta4
 docker.io/seldonio/seldon-core-operator:1.0.1
 tensorflow/tensorflow:1.8.0
 
+######add the below image 
+#kubeflow namespace
+argoproj/workflow-controller:v2.3.0
+#isito-system namespace
+
+docker.io/istio/proxyv2:1.1.6
+grafana/grafana:6.0.2
+docker.io/istio/citadel:1.1.6
+docker.io/istio/kubectl:1.1.6
+docker.io/istio/galley:1.1.6
+docker.io/istio/pilot:1.1.6
+docker.io/istio/mixer:1.1.6
+docker.io/istio/sidecar_injector:1.1.6
+docker.io/jaegertracing/all-in-one:1.9
+docker.io/kiali/kiali:v0.16
+docker.io/prom/prometheus:v2.3.1
 
