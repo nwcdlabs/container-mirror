@@ -47,11 +47,11 @@ kubectl delete pod test
   使用WebHook后，会把相关地址都转化为ECR仓库地址，如果期望部分 Image 依旧强制回源，或者由于 ECR 仓库没有同步所有的image，期望回源地址下载。可以在 image 路径使用特殊标识(**direct.to/**)。  
 比如
 ```yaml
-image: **direct.to/busybox:latest** 
+image: direct.to/busybox:latest
 ```
-返回 busybox:latest**
+返回 busybox:latest
 
 ```yaml
-image: **direct.to/gcr.io/google_containers/pause-amd64:3.0**
+image: direct.to/gcr.io/google_containers/pause-amd64:3.0
 ```
-返回 gcr.io/google_containers/pause-amd64:3.0**
+返回 gcr.io/google_containers/pause-amd64:3.0
