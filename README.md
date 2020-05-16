@@ -16,7 +16,10 @@
     * ECR镜像路径: 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/google_containers/repo:tag
 * **Quay**
     * 原始镜像路径: quay.io/namespace/repo:tag
-    * ECR镜像路径: 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/namespace/repo:tag 
+    * ECR镜像路径: 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/namespace/repo:tag
+* **Global ECR**
+    * 原始镜像路径: 602401143452.dkr.ecr.us-west-2.amazonaws.com/repo:tag
+    * ECR镜像路径: 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/amazonecr/repo:tag 
 
 海外镜像复制到ECR后的路径转换示例如下：
 
@@ -26,17 +29,25 @@
 | gcr.io/heptio-images/velero:v1.1.0 | 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/heptio-images/velero:v1.1.0 |
 | k8s.gcr.io/cluster-autoscaler:v1.2.2 | 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/google_containers/cluster-autoscaler:v1.2.2 |
 | quay.io/calico/node:v3.7.4 | 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/calico/node:v3.7.4 |
+| 602401143452.dkr.ecr.us-west-2.amazonaws.com/amazon-k8s-cni:v1.5.5 | 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/amazonecr/amazon-k8s-cni:v1.5.5 |
 
 ## 使用方法
-1. 如果您是开发测试或新建项目，可以直接修改引用到原始容器镜像的地方，如修改k8s deployment yaml文件中的image指向ECR中相应image的路径。
-2. 如果您使用了自动部署工具且不方便修改image路径，或者想自动替换所有Pod中image到相应ECR路径，可以使用Kubernetes的[Mutating admission webhook](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#mutatingadmissionwebhook)，[点击查看本项目实现](webhook/README.md)。
-3. 如果项目中用到了Helm Charts，并且chart template支持自定义Pod image，可以设置chart参数指向ECR中相应image的路径。
-4. 如果您的项目直接使用kubectl部署，且kubectl版本在v1.14或以上，可以使用[kustomize](https://kubernetes.io/docs/tasks/manage-kubernetes-objects/kustomization/)将原始image路径指向ECR中相应image的路径，[点击查看本项目示例](kustomize/README.md)。
+[使用方法帮助文档](docs/container-mirror-usage-guide.md)
+
+1. 直接修改 kubernetes deployment yaml 文件中的 image 指向本项目 ECR 中相应镜像的路径。
+2. 不方便修改 image 路径，或者想自动替换所有 Kubernetes Pod 中 image 到相应 ECR 路径，可以使用Kubernetes的[Mutating admission webhook](webhook/README.md) 实现自动替换。
+3. 利用 Helm Charts 部署应用，并且chart template支持自定义Pod image，可以设置 chart 参数，指向本项目 ECR 中相应镜像的路径。[点击查看如何使用示例](docs/helm-chart-useage-guide.md)
+4. 如果您的 kubernetes 集群直接使用 kubectl 部署，且kubectl版本在v1.14或以上，可以使用[kustomize](kustomize/README.md) 将原始 image 路径指向指向本项目 ECR 中相应镜像的路径。
+5. 直接 修改 ECS/Fargate 的 task defition yaml 文件，用于部署 ECS/Fargate Service和Task。[点击查看如何使用示例](docs/ecs-fargate-useage-guide.md)
+6. Docker 和 docker-compose, 直接修改文件中的 image 指向本项目 ECR 中相应镜像的路径。[点击查看示例](docs/docker-docker-compose-usage-guide.md)
 
 ## 增加新的容器镜像
 已有镜像列表放在[mirrored-images.txt](./mirror/mirrored-images.txt)。 
-如果您在集群创建过程中需要其他镜像, 请您编辑 [required-images.txt](./mirror/required-images.txt) ，这将会在您的GitHub账户中 fork 一个新的分支，之后您可以提交PR（pull request）。 Merge您的PR会触发`CodeBuild` 去拉取 `required-images.txt` 中定义的镜像回ECR库。 几分钟后，您可以看到图标从`in progress`变为`passing`
+如果您需要其他镜像, 请您编辑 [required-images.txt](./mirror/required-images.txt) ，这将会在您的GitHub账户中 fork 一个新的分支，之后您可以提交PR（pull request）。 
+后台管理员 Merge 您的PR会触发`CodeBuild` 去拉取 `required-images.txt` 中定义的镜像回 ECR 库。 几分钟后，您可以看到图标从`in progress`变为`passing`
 ![](https://codebuild.ap-northeast-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoicjlSNndlSGg4ZkJPQXF0Z1hIQnJIaFZES2VvN2tmUllKTjNEemJGeDVKZU5UUUt5eWdWT0Jrd0NZc2xweHROZFV1dEdXNmJLOVZmUGF1Tnl3ZmRSd1ZBPSIsIml2UGFyYW1ldGVyU3BlYyI6Ik5rNkxrdTZnR21GLzl4YzkiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
+
+详细说明请参考[增加新的容器镜像帮助文档](docs/how-to-request-new-container-image.md)
 
 ## 自动同步新镜像
 在[required-images-daily.txt](./mirror/required-images-daily.txt)中的镜像，会自动同步高于指定tag的新镜像，tag中包含alpha、beta的不同步。目前仅支持Docker Hub。  
@@ -45,21 +56,28 @@ kopeio/etcd-manager:3.0.20200116
 kopeio/etcd-manager:3.0.20200307  
 
 ## ECR登录/docker login
-EKS、Kops on EC2用户可直接使用，无需手动处理。  
-对于docker用户，需要login后才能使用：
+EKS、Kops on EC2用户可直接使用，无需 ECR登录/docker login。
+对于docker用户，需要 ECR 登录/docker login 后才能使用。
+
+1. 确定你执行命令的 IAM user / IAM role 拥有下面权限：
+```json
+[
+    "ecr:GetDownloadUrlForLayer",
+    "ecr:BatchGetImage",
+    "ecr:GetAuthorizationToken",
+    "ecr:BatchCheckLayerAvailability"
+]
 ```
+
+2. 对于docker用户，执行 ECR 登录/docker login：
+```bash
+pip install awscli --upgrade --user
 aws ecr get-login-password --region cn-northwest-1 | docker login --username AWS --password-stdin 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn
 ```
+
 如果AWS CLI版本低于v1.17.10，需运行以下脚本：
-```
+```bash
 aws ecr get-login --region cn-northwest-1 --registry-ids 048912060910 --no-include-email | sh
 ```
-执行此命令的用户需要具有以下权限
-```
-"Action": [
-                "ecr:GetDownloadUrlForLayer",
-                "ecr:BatchGetImage",
-                "ecr:GetAuthorizationToken",
-                "ecr:BatchCheckLayerAvailability"
-            ]
-```
+
+您也可以使用[ecr-credential-helper](https://github.com/awslabs/amazon-ecr-credential-helper) 完成登录。

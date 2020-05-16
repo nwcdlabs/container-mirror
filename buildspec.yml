@@ -4,8 +4,8 @@ env:
   variables:
     FOO: "bar"
   parameter-store:
-    ak: "china-ak"
-    sk: "china-sk"
+    ecr_ak: "China-ECR-AK"
+    ecr_sk: "China-ECR-SK"
 
 phases:
   install:

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bosybox-ecr-demo
+spec:
+  containers:
+    - name: bosybox
+      image: 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/busybox:1.31.1
+      command: ["/bin/sh"]
+      args:
+        [
+          '-c',
+          'i=0; while true; do echo "$i: $(date -u)"; i=$((i+1)); sleep 1; done'
+        ]
