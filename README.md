@@ -35,25 +35,22 @@
 [使用方法帮助文档](docs/container-mirror-usage-guide.md)
 
 1. 直接修改 kubernetes deployment yaml 文件中的 image 指向本项目 ECR 中相应镜像的路径。
-2. 不方便修改 image 路径，或者想自动替换所有 Kubernetes Pod 中 image 到相应 ECR 路径，可以使用Kubernetes的[Mutating admission webhook](webhook/README.md) 实现自动替换。
-3. 利用 Helm Charts 部署应用，并且chart template支持自定义Pod image，可以设置 chart 参数，指向本项目 ECR 中相应镜像的路径。[点击查看如何使用示例](docs/helm-chart-useage-guide.md)
-4. 如果您的 kubernetes 集群直接使用 kubectl 部署，且kubectl版本在v1.14或以上，可以使用[kustomize](kustomize/README.md) 将原始 image 路径指向指向本项目 ECR 中相应镜像的路径。
-5. 直接 修改 ECS/Fargate 的 task defition yaml 文件，用于部署 ECS/Fargate Service和Task。[点击查看如何使用示例](docs/ecs-fargate-useage-guide.md)
+2. 不方便修改 image 路径，或者想自动替换所有 Kubernetes Pod 中 image 到相应 ECR 路径，可以使用Kubernetes的[Mutating admission webhook](webhook/README.md) 实现自动替换。[点击查看示例](webhook/README.md)
+3. 利用 Helm Charts 部署应用，并且chart template支持自定义Pod image，可以设置 chart 参数，指向本项目 ECR 中相应镜像的路径。[点击查看示例](docs/helm-chart-useage-guide.md)
+4. 如果您的 kubernetes 集群直接使用 kubectl 部署，且kubectl版本在v1.14或以上，可以使用[kustomize](kustomize/README.md) 将原始 image 路径指向指向本项目 ECR 中相应镜像的路径。[点击查看示例](kustomize/README.md)
+5. 直接 修改 ECS/Fargate 的 task defition yaml 文件，用于部署 ECS/Fargate Service和Task。[点击查看示例](docs/ecs-fargate-useage-guide.md)
 6. Docker 和 docker-compose, 直接修改文件中的 image 指向本项目 ECR 中相应镜像的路径。[点击查看示例](docs/docker-docker-compose-usage-guide.md)
 
 ## 增加新的容器镜像
 已有镜像列表放在[mirrored-images.txt](./mirror/mirrored-images.txt)。 
 如果您需要其他镜像, 请您编辑 [required-images.txt](./mirror/required-images.txt) ，这将会在您的GitHub账户中 fork 一个新的分支，之后您可以提交PR（pull request）。 
-后台管理员 Merge 您的PR会触发`CodeBuild` 去拉取 `required-images.txt` 中定义的镜像回 ECR 库。 几分钟后，您可以看到图标从`in progress`变为`passing`
+后台管理员 Merge 您的PR会触发`CodeBuild` 去拉取 `required-images.txt` 中定义的镜像回 ECR库，拉取过程中，图标会变成`in progress`。 拉取完后，您可以看到图标从`in progress`变为`passing`
 ![](https://codebuild.ap-northeast-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoicjlSNndlSGg4ZkJPQXF0Z1hIQnJIaFZES2VvN2tmUllKTjNEemJGeDVKZU5UUUt5eWdWT0Jrd0NZc2xweHROZFV1dEdXNmJLOVZmUGF1Tnl3ZmRSd1ZBPSIsIml2UGFyYW1ldGVyU3BlYyI6Ik5rNkxrdTZnR21GLzl4YzkiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
 
 详细说明请参考[增加新的容器镜像帮助文档](docs/how-to-request-new-container-image.md)
 
 ## 自动同步新镜像
-在[required-images-daily.txt](./mirror/required-images-daily.txt)中的镜像，会自动同步高于指定tag的新镜像，tag中包含alpha、beta的不同步。目前仅支持Docker Hub。  
-比如指定kopeio/etcd-manager:3.0.20190930，会自动同步  
-kopeio/etcd-manager:3.0.20200116  
-kopeio/etcd-manager:3.0.20200307  
+在[required-images-daily.txt](./mirror/required-images-daily.txt)中的镜像，会自动同步指定image的新镜像，tag中包含alpha、beta的不同步。目前仅支持Docker Hub。  
 
 ## ECR登录/docker login
 EKS、Kops on EC2用户可直接使用，无需 ECR登录/docker login。

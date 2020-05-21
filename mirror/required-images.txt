@@ -12,14 +12,4 @@
 
 
 
-#add jira and confluence
-atlassian/jira-software:latest
-atlassian/confluence-server:latest
-atlassian/confluence-server:6.9.1
-
-
-# Required for Nginx Ingress Controller
-quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.32.0
-jettech/kube-webhook-certgen:v1.2.0
-
 

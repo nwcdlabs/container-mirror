@@ -56,7 +56,7 @@ Resources:
   Project:
     Type: AWS::CodeBuild::Project
     Properties:
-      Name: container-mirror
+      Name: container-mirror-daily
       ServiceRole: !GetAtt MirrorServiceRole.Arn
       BadgeEnabled: true
       Artifacts:
@@ -71,6 +71,7 @@ Resources:
           Type: OAUTH
         Location: !Ref RepositoryURL
         Type: GITHUB
+        BuildSpec: buildspec-daily.yml
       Triggers:
         Webhook: true
         FilterGroups: 

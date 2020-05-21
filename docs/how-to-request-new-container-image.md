@@ -14,7 +14,7 @@
 
 ![mirror-inprogress](media/mirror-inprogress.png)
 
-## 若干分钟后，您可以看到图标从`in progress`变为`passing`
+## 拉取完后，您可以看到图标从`in progress`变为`passing`
 ![](https://codebuild.ap-northeast-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoicjlSNndlSGg4ZkJPQXF0Z1hIQnJIaFZES2VvN2tmUllKTjNEemJGeDVKZU5UUUt5eWdWT0Jrd0NZc2xweHROZFV1dEdXNmJLOVZmUGF1Tnl3ZmRSd1ZBPSIsIml2UGFyYW1ldGVyU3BlYyI6Ik5rNkxrdTZnR21GLzl4YzkiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
 
 ![mirror-passing](media/mirror-passing.png)

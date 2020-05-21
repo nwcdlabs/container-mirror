@@ -1,7 +1,10 @@
 # 脚本说明
 
 ## mirror-images.sh
-主要脚本，从Global同步到国内
+主要脚本，从Global同步到国内，需要同步的数据从required-images.txt获取
+
+## mirror-images-daily.sh
+每日执行，从Global同步到国内，需要同步的数据从required-images-daily.txt获取
 
 ## ECRImageList.sh
 国内ECR现有image清单
