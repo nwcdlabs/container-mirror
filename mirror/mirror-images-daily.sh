@@ -7,7 +7,7 @@ images=$(grep -v ^# $IMAGES_DAILY_FILE_LIST)
 for image in ${images[@]}
 do
   repo=`echo ${image}|cut -d: -f1`
-  echo "******begin pull ${repo} all tag******"
+  echo "************begin pull ${repo} all tag************"
   if inArray "${repo}" "$blacklist"
   then
     echo "repo: $repo on the blacklist"
@@ -19,9 +19,13 @@ do
     existTags=$(echo $existTags | tr " " "\n" | sort)
     for tag in ${allTags}
     do
-      if inArray "${tag}" "$existTags"
+      if [ "latest" == "${tag}" ]
 	  then
-        echo "exist ${repo}:${tag}"
+        pullAndPush "${repo}:${tag}"
+	  elif inArray "${tag}" "$existTags"
+	  then
+        #echo "exist ${repo}:${tag}"
+		exist=true
       else
         pullAndPush "${repo}:${tag}"
       fi

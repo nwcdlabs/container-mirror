@@ -100,7 +100,7 @@ function loginEcr() {
 
 function pullAndPush(){
   origimg="$1"
-  echo "******origimg:${origimg}******"
+  echo "------origimg:${origimg}------"
   repo=`echo ${origimg}|cut -d: -f1`
   if inArray "${repo}" "$blacklist"
   then
