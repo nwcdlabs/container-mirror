@@ -16,6 +16,10 @@ gcr.io/kubeflow-ci/tf-dist-mnist-test:1.0
 gcr.io/kubeflow-examples/mnist/web-ui:v20190112-v0.2-142-g3b38225
 gcr.io/kubeflow-images-public/katib/v1alpha3/suggestion-hyperopt:v0.8.0
 
+#need by kubeflow distribute training
+gcr.io/kubeflow-ci/pytorch-dist-mnist_test:1.0
+gcr.io/kubeflow-images-public/katib/v1alpha3/tfevent-metrics-collector:v0.8.0
+
 
 
 
