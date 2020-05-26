@@ -39,9 +39,11 @@ Resources:
         ZipFile: |
           import json
           import base64
+          from functools import reduce
 
           image_mirrors = {
             'k8s.gcr.io/': '048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/google_containers/',
+            'gcr.io/google-containers/': '048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/google_containers/',
             'gcr.io/': '048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/',
             'asia.gcr.io/': '048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/',
             'eu.gcr.io/': '048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/',
@@ -68,7 +70,7 @@ Resources:
 
             print(json.dumps(json_patch))
             # set response body
-            patch_b64 = base64.b64encode(json.dumps(json_patch))
+            patch_b64 = str(base64.b64encode(json.dumps(json_patch).encode("utf-8")), "utf-8")
             response_body = {
               'response': {
                 'allowed': True,
@@ -93,7 +95,7 @@ Resources:
             for idx, container in enumerate(containers):
               image = container['image']
               math_mirror=False
-              for orig_image, mirror_image in image_mirrors.iteritems():
+              for orig_image, mirror_image in image_mirrors.items():
                 if image.startswith(orig_image):
                   math_mirror=True
                   image = mirror_image + image[len(orig_image):]
@@ -109,7 +111,7 @@ Resources:
       Handler: index.handler
       MemorySize: 128
       Role: !GetAtt lambdaIAMRole.Arn
-      Runtime: python2.7
+      Runtime: python3.7
       Timeout: 60
 
   lambdaApiGatewayInvoke:

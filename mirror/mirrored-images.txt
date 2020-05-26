@@ -3903,6 +3903,10 @@ drupal:7.69
 drupal:7.69-apache
 drupal:7.69-fpm
 drupal:7.69-fpm-alpine
+drupal:7.70
+drupal:7.70-apache
+drupal:7.70-fpm
+drupal:7.70-fpm-alpine
 drupal:7-apache
 drupal:7-fpm
 drupal:7-fpm-alpine
@@ -4335,6 +4339,10 @@ drupal:8.7.13
 drupal:8.7.13-apache
 drupal:8.7.13-fpm
 drupal:8.7.13-fpm-alpine
+drupal:8.7.14
+drupal:8.7.14-apache
+drupal:8.7.14-fpm
+drupal:8.7.14-fpm-alpine
 drupal:8.7.1-apache
 drupal:8.7.1-fpm
 drupal:8.7.1-fpm-alpine
@@ -4398,6 +4406,10 @@ drupal:8.8.5
 drupal:8.8.5-apache
 drupal:8.8.5-fpm
 drupal:8.8.5-fpm-alpine
+drupal:8.8.6
+drupal:8.8.6-apache
+drupal:8.8.6-fpm
+drupal:8.8.6-fpm-alpine
 drupal:8.8-apache
 drupal:8.8-fpm
 drupal:8.8-fpm-alpine
@@ -29017,6 +29029,10 @@ rabbitmq:3.8.3-rc.2
 rabbitmq:3.8.3-rc.2-alpine
 rabbitmq:3.8.3-rc.2-management
 rabbitmq:3.8.3-rc.2-management-alpine
+rabbitmq:3.8.4-rc.3
+rabbitmq:3.8.4-rc.3-alpine
+rabbitmq:3.8.4-rc.3-management
+rabbitmq:3.8.4-rc.3-management-alpine
 rabbitmq:3.8-alpine
 rabbitmq:3.8-management
 rabbitmq:3.8-management-alpine

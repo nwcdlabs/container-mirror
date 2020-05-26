@@ -14,8 +14,8 @@
 ### 方法1：Kubernetes mutating admission webhook 直接使用本项目托管 Amazon API Gateway
 1. 本项目已经部署了一个托管 Amazon API Gateway，使用以下命令即可直接部署 WebHook，并指向托管 Amazon API Gateway。
 ```bash
-cd webhook/
-kubectl apply -f mutating-webhook.yaml
+kubectl apply -f webhook/mutating-webhook.yaml
+#kubectl apply -f https://raw.githubusercontent.com/nwcdlabs/container-mirror/master/webhook/mutating-webhook.yaml
 ```
 
 2. 验证 pod 详细信息中的image 已经替换为本项目对应的 ECR 镜像仓库。

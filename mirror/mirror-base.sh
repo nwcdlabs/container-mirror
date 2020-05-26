@@ -12,7 +12,7 @@ DOMAIN_MAP["quay.io"]="quay"
 DOMAIN_MAP["gcr.io"]="gcr"
 DOMAIN_MAP["asia.gcr.io"]="gcr"
 DOMAIN_MAP["us.gcr.io"]="gcr"
-DOMAIN_MAP["k8s.gcr.io"]="gcr\/google_containers"
+DOMAIN_MAP["k8s.gcr.io"]="gcr/google_containers"
 DOMAIN_MAP["602401143452.dkr.ecr.us-west-2.amazonaws.com"]="amazonecr"
 DOMAIN_MAP["docker.io"]="dockerhub"
 
@@ -134,7 +134,7 @@ function pullAndPush(){
 }
 
 # list all existing repos
-allEcrRepos=$(aws --profile=ChinaECR --region $ECR_REGION ecr describe-repositories --query 'repositories[*].repositoryName' --page-size 1000 --output text)
+allEcrRepos=$(aws --profile=ChinaECR --region $ECR_REGION ecr describe-repositories --query 'repositories[*].repositoryName' --output text)
 echo "allEcrRepos:$allEcrRepos"
 
 blacklist=$(grep -v ^# $IMAGES_BLACKLIST | cut -d: -f1 | sort -u)

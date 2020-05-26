@@ -4,7 +4,7 @@ ECR_REGION='cn-northwest-1'
 ECR_DN="048912060910.dkr.ecr.${ECR_REGION_FROM}.amazonaws.com.cn"
 
 # list all existing repos
-allEcrRepos=$(aws --profile=ChinaECR --region $ECR_REGION ecr describe-repositories --query 'repositories[*].repositoryName' --page-size 1000 --output text)
+allEcrRepos=$(aws --profile=ChinaECR --region $ECR_REGION ecr describe-repositories --query 'repositories[*].repositoryName' --output text)
 #allEcrRepos="dockerhub/redis dockerhub/kope/dns-controller"
 #echo "allEcrRepos:$allEcrRepos"
 
