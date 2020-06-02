@@ -26,7 +26,7 @@
 
 | 海外镜像         | ECR镜像  |
 |------------    |---------|
-| ubuntu:1.17.9  | 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/ubuntu:1.17.9 |
+| nginx:1.17.9  | 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/nginx:1.17.9 |
 | gcr.io/heptio-images/velero:v1.1.0 | 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/heptio-images/velero:v1.1.0 |
 | k8s.gcr.io/cluster-autoscaler:v1.2.2 | 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/google_containers/cluster-autoscaler:v1.2.2 |
 | quay.io/calico/node:v3.7.4 | 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/calico/node:v3.7.4 |
