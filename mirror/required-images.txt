@@ -9,8 +9,7 @@
 ## see - https://github.com/aws/aws-node-termination-handler
 ## images defined - https://github.com/aws/aws-node-termination-handler/blob/79bf81f618de474f86636120a40438a47a4e2869/config/helm/aws-node-termination-handler/values.yaml#L5-L7
 #amazon/aws-node-termination-handler:v1.3.1
-#need by sagemaker byoc training
-shishuaiwang/sagemaker-tf-albert-chinese-ner:latest
+
 
 
 

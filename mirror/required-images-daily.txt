@@ -1,4 +1,5 @@
 # So far, only Docker Hub is supported.
+adminer
 couchbase
 redis
 ubuntu

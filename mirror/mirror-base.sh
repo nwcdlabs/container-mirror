@@ -118,17 +118,18 @@ function pullAndPush(){
       echo "tagging $origimg to $targetImg"
       docker tag $origimg $targetImg
       
-      echo "getting the digests on $targetImg..."
-      digests=$(getLocalImageDigests $targetImg)
-      echo "digests:$digests"
-      echo "checking if remote image exists"
+      #echo "getting the digests on $targetImg..."
+      #digests=$(getLocalImageDigests $targetImg)
+      #echo "digests:$digests"
+      #echo "checking if remote image exists"
       
-      if isRemoteImageExists $targetImg $digests;then 
-        echo "[SKIP] image already exists, skip"
-      else
-        echo "[PUSH] remote image not exists or digests not match, pushing $targetImg"
-        docker push $targetImg
-      fi	  
+      #去掉检查
+	  #if isRemoteImageExists $targetImg $digests;then 
+      #  echo "[SKIP] image already exists, skip"
+      #else
+      #echo "[PUSH] remote image not exists or digests not match, pushing $targetImg"
+      docker push $targetImg
+      #fi	  
     fi
   fi
 }
