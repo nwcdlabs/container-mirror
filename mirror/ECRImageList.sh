@@ -25,7 +25,7 @@ do
   do
     if [ "$tag" != "null" ]; then
       replaceDomainName "${repo}:${tag}"
-	  echo $URI >> 1.txt
+	  echo $URI >> mirrored-images.txt
 	fi
   done
 done

@@ -56,7 +56,7 @@ Resources:
   Project:
     Type: AWS::CodeBuild::Project
     Properties:
-      Name: container-mirror-daily
+      Name: container-mirror
       ServiceRole: !GetAtt MirrorServiceRole.Arn
       BadgeEnabled: true
       Artifacts:
@@ -71,7 +71,7 @@ Resources:
           Type: OAUTH
         Location: !Ref RepositoryURL
         Type: GITHUB
-        BuildSpec: buildspec-daily.yml
+        BuildSpec: buildspec.yml
       Triggers:
         Webhook: true
         FilterGroups: 
@@ -105,16 +105,6 @@ Resources:
                   - "codebuild:StartBuild"
                 Resource:
                   - !GetAtt Project.Arn
-  CodeBuildTrigger:
-    Type: AWS::Events::Rule
-    Properties: 
-      Name: "CodeBuildContainerMirrorTrigger"
-      ScheduleExpression: "cron(0 15 ? * * *)"
-      State: "ENABLED"
-      Targets: 
-        - Arn: !GetAtt Project.Arn
-          Id: "CodeBuildContainerMirror"
-          RoleArn: !GetAtt StartCodeBuildRole.Arn
   AKParameter:
     Type: "AWS::SSM::Parameter"
     Properties:
@@ -129,7 +119,7 @@ Resources:
       Value: !Ref AWSChinaSK
 Parameters:
   RepositoryURL:
-    Description: GitHub Repository URL，https://github.com/<user-name>/<repository-name>
+    Description: GitHub Repository URL,https://github.com/<user-name>/<repository-name>
     Type: String
     MinLength: 20
   AWSChinaAK:
