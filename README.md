@@ -4,7 +4,7 @@
 ## 项目介绍
 本项目用于将[Docker Hub](https://hub.docker.com/)，[Google Container Registry](https://console.cloud.google.com/gcr/images/google-containers/GLOBAL?pli=1)和[Quay](https://quay.io/search)中常用的公共container image自动同步至AWS中国区的ECR内，使AWS用户能更方便快捷的获取这些常见的容器镜像。  
 如果您是container image的权利人，不允许相关container image同步到AWS中国区的ECR内，请发送邮件到nwcd_labs@nwcdcloud.cn。  
-![](./sources/deployment.png)
+![](./resources/deployment.png)
 
 ## Amazon ECR镜像路径
 所有同步至ECR的镜像都放在048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn这一container registry内，ECR镜像路径规则如下
