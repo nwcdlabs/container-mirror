@@ -17,7 +17,7 @@ phases:
       - bash ./mirror/ECR_Auth.sh
   build:
     commands:
-      - cd mirror; bash mirror-images.sh
+      - cd mirror; bash mirror-images-daily.sh
   post_build:
     commands:
       - echo "post_build phase"

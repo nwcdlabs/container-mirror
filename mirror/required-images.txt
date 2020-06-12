@@ -10,11 +10,8 @@
 ## images defined - https://github.com/aws/aws-node-termination-handler/blob/79bf81f618de474f86636120a40438a47a4e2869/config/helm/aws-node-termination-handler/values.yaml#L5-L7
 #amazon/aws-node-termination-handler:v1.3.1
 
-
-docker.io/istio/examples-bookinfo-details-v1:1.15.0
-docker.io/istio/examples-bookinfo-productpage-v1:1.15.0
-docker.io/istio/examples-bookinfo-ratings-v1:1.15.0
-docker.io/istio/examples-bookinfo-reviews-v1:1.15.0
-docker.io/istio/examples-bookinfo-reviews-v2:1.15.0
-docker.io/istio/examples-bookinfo-reviews-v3:1.15.0
-
+#need by kubeflow katib
+gcr.io/kubeflow-images-public/katib/v1alpha3/file-metrics-collector:v0.8.0
+gcr.io/kubeflow-images-public/katib/v1alpha3/suggestion-chocolate:v0.8.0
+gcr.io/kubeflow-images-public/katib/v1alpha3/suggestion-skopt:v0.8.0
+docker.io/jboss/keycloak:10.0.0

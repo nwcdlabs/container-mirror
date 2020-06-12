@@ -71,6 +71,7 @@ Resources:
           Type: OAUTH
         Location: !Ref RepositoryURL
         Type: GITHUB
+        BuildSpec: buildspec.yml
       Triggers:
         Webhook: true
         FilterGroups: 
@@ -104,31 +105,21 @@ Resources:
                   - "codebuild:StartBuild"
                 Resource:
                   - !GetAtt Project.Arn
-  CodeBuildTrigger:
-    Type: AWS::Events::Rule
-    Properties: 
-      Name: "CodeBuildContainerMirrorTrigger"
-      ScheduleExpression: "cron(0 15 ? * * *)"
-      State: "ENABLED"
-      Targets: 
-        - Arn: !GetAtt Project.Arn
-          Id: "CodeBuildContainerMirror"
-          RoleArn: !GetAtt StartCodeBuildRole.Arn
   AKParameter:
     Type: "AWS::SSM::Parameter"
     Properties:
-      Name: "china-ak"
+      Name: "China-ECR-AK"
       Type: "String"
       Value: !Ref AWSChinaAK
   SKParameter:
     Type: "AWS::SSM::Parameter"
     Properties:
-      Name: "china-sk"
+      Name: "China-ECR-SK"
       Type: "String"
       Value: !Ref AWSChinaSK
 Parameters:
   RepositoryURL:
-    Description: GitHub Repository URL，https://github.com/<user-name>/<repository-name>
+    Description: GitHub Repository URL,https://github.com/<user-name>/<repository-name>
     Type: String
     MinLength: 20
   AWSChinaAK:
