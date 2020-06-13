@@ -15,3 +15,6 @@ gcr.io/kubeflow-images-public/katib/v1alpha3/file-metrics-collector:v0.8.0
 gcr.io/kubeflow-images-public/katib/v1alpha3/suggestion-chocolate:v0.8.0
 gcr.io/kubeflow-images-public/katib/v1alpha3/suggestion-skopt:v0.8.0
 docker.io/jboss/keycloak:10.0.0
+
+#need by cluster-autoscaler for EKS 1.16
+gcr.io/k8s-artifacts-prod/autoscaling/cluster-autoscaler:v1.16.5
