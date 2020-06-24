@@ -10,11 +10,6 @@
 ## images defined - https://github.com/aws/aws-node-termination-handler/blob/79bf81f618de474f86636120a40438a47a4e2869/config/helm/aws-node-termination-handler/values.yaml#L5-L7
 #amazon/aws-node-termination-handler:v1.3.1
 
-#need by kubeflow katib
-gcr.io/kubeflow-images-public/katib/v1alpha3/file-metrics-collector:v0.8.0
-gcr.io/kubeflow-images-public/katib/v1alpha3/suggestion-chocolate:v0.8.0
-gcr.io/kubeflow-images-public/katib/v1alpha3/suggestion-skopt:v0.8.0
-docker.io/jboss/keycloak:10.0.0
-
-#need by cluster-autoscaler for EKS 1.16
-us.gcr.io/k8s-artifacts-prod/autoscaling/cluster-autoscaler:v1.16.5
+#need by kubernetes-dashboard-v2.0.3 for EKS 1.16
+dockerhub/kubernetesui/dashboard:v2.0.3
+dockerhub/kubernetesui/metrics-scraper:v1.0.4
