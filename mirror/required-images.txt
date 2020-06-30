@@ -10,6 +10,7 @@
 ## images defined - https://github.com/aws/aws-node-termination-handler/blob/79bf81f618de474f86636120a40438a47a4e2869/config/helm/aws-node-termination-handler/values.yaml#L5-L7
 #amazon/aws-node-termination-handler:v1.3.1
 
-#need by kubernetes-dashboard-v2.0.3 for EKS 1.16
-kubernetesui/dashboard:v2.0.3
-kubernetesui/metrics-scraper:v1.0.4
+#need by prometheus
+prom/node-exporter:v1.0.1
+prom/prometheus:v2.19.0
+quay.io/coreos/kube-state-metrics:v1.9.7
