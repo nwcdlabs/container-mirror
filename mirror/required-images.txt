@@ -11,6 +11,8 @@
 #amazon/aws-node-termination-handler:v1.3.1
 
 #need by prometheus
-prom/node-exporter:v1.0.1
-prom/prometheus:v2.19.0
-quay.io/coreos/kube-state-metrics:v1.9.7
+quay.io/prometheus/alertmanager
+quay.io/prometheus/prometheus
+quay.io/coreos/kube-state-metrics:v1.9.2
+quay.io/coreos/kube-rbac-proxy:v0.4.1
+quay.io/prometheus/node-exporter:v0.18.1
