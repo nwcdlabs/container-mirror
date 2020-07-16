@@ -16,3 +16,7 @@ quay.io/prometheus/prometheus
 quay.io/coreos/kube-state-metrics:v1.9.2
 quay.io/coreos/kube-rbac-proxy:v0.4.1
 quay.io/prometheus/node-exporter:v0.18.1
+
+# need by ingress-nginx controller
+us.gcr.io/k8s-artifacts-prod/ingress-nginx/controller:v0.34.1
+docker.io/jettech/kube-webhook-certgen:v1.2.2
