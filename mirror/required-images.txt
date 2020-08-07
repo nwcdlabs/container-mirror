@@ -41,3 +41,5 @@ quay.io/jetstack/cert-manager-controller:v0.16.0
 quay.io/jetstack/cert-manager-webhook:v0.16.0
 quay.io/jetstack/cert-manager-acmesolver:v0.16.0
 
+# needed for a fluentd deamonset which pushes logs in a elastic search cluster
+fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch
