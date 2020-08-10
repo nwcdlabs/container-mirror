@@ -43,3 +43,15 @@ quay.io/jetstack/cert-manager-acmesolver:v0.16.0
 
 # needed for a fluentd deamonset which pushes logs in a elastic search cluster
 fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch
+
+# needed for kfserving images
+gcr.io/kfserving/sklearnserver:0.2.2
+gcr.io/kfserving/xgbserver:0.2.2
+gcr.io/kfserving/pytorchserver:0.2.2
+gcr.io/kfserving/alibi-explainer:0.2.2
+gcr.io/kfserving/storage-initializer:0.2.2
+gcr.io/kfserving/logger:0.2.2
+
+# needed for kubeflow katib images
+gcr.io/kubeflow-images-public/katib/v1alpha3/suggestion-hyperband:v0.8.0
+gcr.io/kubeflow-images-public/katib/v1alpha3/suggestion-nasrl:v0.8.0
