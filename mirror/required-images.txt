@@ -55,3 +55,6 @@ gcr.io/kfserving/logger:0.2.2
 # needed for kubeflow katib images
 gcr.io/kubeflow-images-public/katib/v1alpha3/suggestion-hyperband:v0.8.0
 gcr.io/kubeflow-images-public/katib/v1alpha3/suggestion-nasrl:v0.8.0
+
+#needed for kopeio images
+kopeio/etcd-manager:3.0.20200428
