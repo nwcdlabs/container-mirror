@@ -1,5 +1,8 @@
 ![](https://codebuild.ap-northeast-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoicjlSNndlSGg4ZkJPQXF0Z1hIQnJIaFZES2VvN2tmUllKTjNEemJGeDVKZU5UUUt5eWdWT0Jrd0NZc2xweHROZFV1dEdXNmJLOVZmUGF1Tnl3ZmRSd1ZBPSIsIml2UGFyYW1ldGVyU3BlYyI6Ik5rNkxrdTZnR21GLzl4YzkiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
 
+## 声明
+您理解并同意：本镜像站收集并供您下载的镜像文件是按“原样”提供的，即我们无法控制或修改镜像文件，可能会出现由于开发者未及时更新或该镜像文件本身存在异常导致该镜像文件损坏或其他不可用状态，我们也不提供有关文件（内容）的任何保证，不会对镜像文件及其相关的信息或文档的可用性、可靠性、正确性或更新、升级等提供任何明示或默示的承诺或保证，镜像文件的下载和使用完全由您自主决定并自行承担风险，由此带来的任何损失，您同意在法律允许的范围内放弃追究我们的责任。
+
 
 ## 项目介绍
 本项目用于将[Docker Hub](https://hub.docker.com/)，[Google Container Registry](https://console.cloud.google.com/gcr/images/google-containers/GLOBAL?pli=1)和[Quay](https://quay.io/search)中常用的公共container image自动同步至AWS中国区的ECR内，使AWS用户能更方便快捷的获取这些常见的容器镜像。  
