@@ -168,3 +168,7 @@ minio/minio:RELEASE.2018-02-09T22-40-05Z
 gcr.io/google_containers/spartakus-amd64:v1.1.0
 k8s.gcr.io/pause:3.1
 gcr.io/tfx-oss-public/tfx:0.22.0
+
+
+#aws fluent-bit s3 pulugin
+amazon/aws-for-fluent-bit:2.8.0
