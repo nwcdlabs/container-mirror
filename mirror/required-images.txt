@@ -169,6 +169,13 @@ gcr.io/google_containers/spartakus-amd64:v1.1.0
 k8s.gcr.io/pause:3.1
 gcr.io/tfx-oss-public/tfx:0.22.0
 
+# knative
+gcr.io/knative-releases/knative.dev/serving/cmd/activator:v0.11.1	
+gcr.io/knative-releases/knative.dev/serving/cmd/autoscaler-hpa:v0.11.1	
+gcr.io/knative-releases/knative.dev/serving/cmd/autoscaler:v0.11.1
+gcr.io/knative-releases/knative.dev/serving/cmd/networking/istio:v0.11.2
+gcr.io/knative-releases/knative.dev/serving/cmd/webhook:v0.11.1
+gcr.io/knative-releases/knative.dev/serving/cmd/controller:v0.11.1
 
 #aws fluent-bit s3 pulugin
 amazon/aws-for-fluent-bit:2.8.0
