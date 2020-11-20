@@ -10,4 +10,7 @@
 ## images defined - https://github.com/aws/aws-node-termination-handler/blob/79bf81f618de474f86636120a40438a47a4e2869/config/helm/aws-node-termination-handler/values.yaml#L5-L7
 #amazon/aws-node-termination-handler:v1.3.1
 
+quay.io/jetstack/cert-manager-cainjector:v1.0.2
+quay.io/jetstack/cert-manager-webhook:v1.0.2
+
 
