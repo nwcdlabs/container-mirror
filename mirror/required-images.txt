@@ -10,20 +10,7 @@
 ## images defined - https://github.com/aws/aws-node-termination-handler/blob/79bf81f618de474f86636120a40438a47a4e2869/config/helm/aws-node-termination-handler/values.yaml#L5-L7
 #amazon/aws-node-termination-handler:v1.3.1
 
-
-
-quay.io/jetstack/cert-manager-cainjector:v1.0.2
-quay.io/jetstack/cert-manager-webhook:v1.0.2
-quay.io/jetstack/cert-manager-controller:v1.0.2
-
-#Juicefs Required
-juicedata/juicefs-csi-driver
-quay.io/k8scsi/csi-cluster-driver-registrar:v1.0.1
-quay.io/k8scsi/csi-provisioner:v1.1.0
-quay.io/k8scsi/csi-attacher:v1.1.0
-quay.io/k8scsi/livenessprobe:v1.1.0
-quay.io/k8scsi/csi-node-driver-registrar:v1.1.0
-
-#FSX CSI Driver
-amazon/aws-fsx-csi-driver:v0.4.0
-quay.io/k8scsi/csi-node-driver-registrar:v1.1.0
+#kube-s3
+freegroup/kube-s3:1.13
+freegroup/kube-s3:1.12
+freegroup/kube-s3:1.11
