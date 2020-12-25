@@ -10,4 +10,13 @@
 ## images defined - https://github.com/aws/aws-node-termination-handler/blob/79bf81f618de474f86636120a40438a47a4e2869/config/helm/aws-node-termination-handler/values.yaml#L5-L7
 #amazon/aws-node-termination-handler:v1.3.1
 
-
+#nexus
+quay.io/travelaudience/docker-nexus:3.27.0
+quay.io/travelaudience/docker-nexus-proxy:2.6.0
+sonatype/nexus3:3.27.0
+sonatype/nexus3:3.28.0
+sonatype/nexus3:3.28.1
+sonatype/nexus3:3.29.0
+#external-dns
+bitnami/external-dns:0.7.4
+bitnami/external-dns:0.7.5
