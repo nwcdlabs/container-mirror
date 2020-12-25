@@ -22,6 +22,13 @@ bitnami/external-dns:0.7.4
 bitnami/external-dns:0.7.5
 
 
+#A little bit images missed for Kubeflow 1.2 installation
+gcr.io/arrikto/kubeflow/oidc-authservice:6ac9400
+gcr.io/kubeflow-images-public/kubernetes-sigs/application
+gcr.io/ml-pipeline/cache-deployer:dummy
+gcr.io/ml-pipeline/cache-server:dummy
+
+
 #Images from gcr for Kubeflow 1.2 installation with update (156 lines)
 gcr.io/cloud-solutions-group/cloud-endpoints-controller  
 gcr.io/cloud-solutions-group/cloud-endpoints-controller:0.2.1   
