@@ -10,13 +10,15 @@
 ## images defined - https://github.com/aws/aws-node-termination-handler/blob/79bf81f618de474f86636120a40438a47a4e2869/config/helm/aws-node-termination-handler/values.yaml#L5-L7
 #amazon/aws-node-termination-handler:v1.3.1
 
-#nexus
-quay.io/travelaudience/docker-nexus:3.27.0
-quay.io/travelaudience/docker-nexus-proxy:2.6.0
-sonatype/nexus3:3.27.0
-sonatype/nexus3:3.28.0
-sonatype/nexus3:3.28.1
-sonatype/nexus3:3.29.0
-#external-dns
-bitnami/external-dns:0.7.4
-bitnami/external-dns:0.7.5
+#KubeSphere
+csiplugin/snapshot-controller:v2.0.1
+mirrorgooglecontainers/defaultbackend-amd64:1.4
+kubesphere/kube-state-metrics:v1.9.6
+kubesphere/kube-rbac-proxy:v0.4.1
+kubesphere/node-exporter:ks-v0.18.1
+kubesphere/prometheus-operator:v0.38.3
+kubesphere/ks-apiserver:v3.0.0
+kubesphere/ks-console:v3.0.0
+kubesphere/ks-controller-manager:v3.0.0
+kubesphere/ks-installer:v3.0.0
+osixia/openldap:1.3.0
