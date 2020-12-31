@@ -11,9 +11,5 @@
 #amazon/aws-node-termination-handler:v1.3.1
 
 #KubeSphere Need
-prom/alertmanager:v0.21.0
-kubesphere/notification-manager-operator:v0.1.0
-prom/prometheus:v2.20.1
-kubesphere/prometheus-config-reloader:v0.38.3
-jimmidyson/configmap-reload:v0.3.0
+kubesphere/notification-manager:v0.1.0
 
