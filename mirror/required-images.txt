@@ -10,8 +10,8 @@
 ## images defined - https://github.com/aws/aws-node-termination-handler/blob/79bf81f618de474f86636120a40438a47a4e2869/config/helm/aws-node-termination-handler/values.yaml#L5-L7
 #amazon/aws-node-termination-handler:v1.3.1
 
-#EBS CSI Driver v0.8.0
-k8s.gcr.io/provider-aws/aws-ebs-csi-driver:v0.8.0
+#EBS CSI Driver v0.8.1
+k8s.gcr.io/provider-aws/aws-ebs-csi-driver:v0.8.1
 quay.io/k8scsi/csi-provisioner:v1.5.0
 quay.io/k8scsi/csi-attacher:v2.2.0
 quay.io/k8scsi/livenessprobe:v2.1.0
