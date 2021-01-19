@@ -5,7 +5,4 @@
 #
 # Example
 #
-## name - rok tool for kubeflow
-
-#rok tool v0.1
-gcr.io/arrikto/rok-tools:l0-release-v1.0-rc6
+gcr.io/arrikto/jupyter-kale:4a5d7e63-9f74f267
