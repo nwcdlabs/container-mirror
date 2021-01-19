@@ -5,7 +5,4 @@
 #
 # Example
 #
-## name - jupyter-kale for Amazon EKS kubeflow
-
-#jupyter-kale
 gcr.io/arrikto/jupyter-kale:4a5d7e63-9f74f267
