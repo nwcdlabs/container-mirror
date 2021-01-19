@@ -4,5 +4,11 @@
 # 2. please add additional required images below
 #
 # Example
-#
-gcr.io/arrikto/jupyter-kale:4a5d7e63-9f74f267
+# gcr.io/arrikto/jupyter-kale:4a5d7e63-9f74f267
+
+# Install kubecost in AWS China
+gcr.io/kubecost1/cost-model:prod-1.72.0
+gcr.io/kubecost1/frontend:prod-1.72.0
+gcr.io/kubecost1/server:prod-1.72.0
+grafana/grafana:7.1.1
+prom/prometheus:v2.17.2
