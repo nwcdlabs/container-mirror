@@ -3,8 +3,7 @@
 # 
 # 2. please add additional required images below
 #
-# Example
-# gcr.io/arrikto/jupyter-kale:4a5d7e63-9f74f267
-
-# Install kubecost in AWS China - Update
-quay.io/kubecost1/checks:prod-1.72.0
+# 
+# Doc:https://andrewm4894.com/2019/10/20/kubeflow-custom-jupyter-image-github-for-notebook-source-control/
+# Install kubeflow notebook in AWS China
+gcr.io/kubeflow-images-public/tensorflow-1.13.1-notebook-cpu:v0.5.0
