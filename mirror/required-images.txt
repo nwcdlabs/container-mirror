@@ -4,6 +4,7 @@
 # 2. please add additional required images below
 #
 # 
-# Doc:https://andrewm4894.com/2019/10/20/kubeflow-custom-jupyter-image-github-for-notebook-source-control/
-# Install kubeflow notebook in AWS China
-gcr.io/kubeflow-images-public/tensorflow-1.13.1-notebook-cpu:v0.5.0
+
+# https://kubernetes-sigs.github.io/aws-efs-csi-driver helm chart dependency
+quay.io/k8scsi/livenessprobe:v2.0.0
+k8s.gcr.io/sig-storage/csi-provisioner:v2.0.2
