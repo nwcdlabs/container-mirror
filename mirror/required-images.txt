@@ -5,7 +5,4 @@
 #
 # 
 
-# https://kubernetes-sigs.github.io/aws-efs-csi-driver helm chart dependency
-quay.io/k8scsi/livenessprobe:v2.0.0
-k8s.gcr.io/sig-storage/csi-provisioner:v2.0.2
 k8s.gcr.io/autoscaling/cluster-autoscaler:v1.20.0
