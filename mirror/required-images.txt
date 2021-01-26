@@ -6,3 +6,8 @@
 # 
 
 k8s.gcr.io/autoscaling/cluster-autoscaler:v1.20.0
+k8s.gcr.io/provider-aws/aws-ebs-csi-driver:v0.8.1
+quay.io/k8scsi/csi-attacher:v2.2.0
+quay.io/k8scsi/livenessprobe:v2.1.0
+quay.io/k8scsi/csi-snapshotter:v2.1.1
+k8s.gcr.io/external-dns/external-dns:v0.7.6
