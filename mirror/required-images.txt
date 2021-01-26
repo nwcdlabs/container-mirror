@@ -13,7 +13,6 @@ quay.io/k8scsi/csi-snapshotter:v2.1.1
 k8s.gcr.io/external-dns/external-dns:v0.7.6
 gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/controller:v0.20.1
 gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/kubeconfigwriter:v0.20.1
-gcr.io/google.com/cloudsdktool/cloud-sdk:302.0.0-slim
 gcr.io/distroless/base:debug
 gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/webhook:v0.20.1
 gcr.io/tekton-releases/github.com/tektoncd/dashboard/cmd/dashboard:v0.13.0
@@ -22,3 +21,4 @@ gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/controller:v0.11.1
 gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/eventlistenersink:v0.11.1
 gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/interceptors:v0.11.1
 gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/webhook:v0.11.1
+google/cloud-sdk:324.0.0-slim
