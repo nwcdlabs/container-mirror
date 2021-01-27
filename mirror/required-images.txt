@@ -13,3 +13,11 @@
 #amazon/aws-node-termination-handler:v1.3.1
 
 k8s.gcr.io/autoscaling/cluster-autoscaler:v1.18.3
+
+gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/git-init:v0.20.1
+gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/entrypoint:v0.20.1
+gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/nop:v0.20.1
+gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/imagedigestexporter:v0.20.1
+gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/pullrequest-init:v0.20.1
+gcr.io/cloud-builders/gcs-fetcher:latest
+gcr.io/google.com/cloudsdktool/cloud-sdk:325.0.0-slim
