@@ -3,6 +3,13 @@
 # 
 # 2. please add additional required images below
 #
-# 填加新镜像时，把本txt中已有的image删除，避免重复检查
+# 3. delete old images in this txt
+
+
+# Example
+## name - aws/node-termination-handler for Amazon EKS
+## see - https://github.com/aws/aws-node-termination-handler
+## images defined - https://github.com/aws/aws-node-termination-handler/blob/79bf81f618de474f86636120a40438a47a4e2869/config/helm/aws-node-termination-handler/values.yaml#L5-L7
+#amazon/aws-node-termination-handler:v1.3.1
 
 gcr.io/google_containers/autoscaling/cluster-autoscaler:v1.18.3
