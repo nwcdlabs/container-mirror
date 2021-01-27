@@ -3,22 +3,6 @@
 # 
 # 2. please add additional required images below
 #
-# 
+# 填加新镜像时，把本txt中已有的image删除，避免重复检查
 
-k8s.gcr.io/autoscaling/cluster-autoscaler:v1.20.0
-k8s.gcr.io/provider-aws/aws-ebs-csi-driver:v0.8.1
-quay.io/k8scsi/csi-attacher:v2.2.0
-quay.io/k8scsi/livenessprobe:v2.1.0
-quay.io/k8scsi/csi-snapshotter:v2.1.1
-k8s.gcr.io/external-dns/external-dns:v0.7.6
-gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/controller:v0.20.1
-gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/kubeconfigwriter:v0.20.1
-gcr.io/google.com/cloudsdktool/cloud-sdk:302.0.0-slim
-gcr.io/distroless/base:debug
-gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/webhook:v0.20.1
-gcr.io/tekton-releases/github.com/tektoncd/dashboard/cmd/dashboard:v0.13.0
-gcr.io/tekton-releases/github.com/tektoncd/operator/cmd/manager:v0.15.2-1
-gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/controller:v0.11.1
-gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/eventlistenersink:v0.11.1
-gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/interceptors:v0.11.1
-gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/webhook:v0.11.1
+gcr.io/google_containers/autoscaling/cluster-autoscaler:v1.18.3
