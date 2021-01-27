@@ -21,3 +21,5 @@ gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/imagedigestexporter:v0.2
 gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/pullrequest-init:v0.20.1
 gcr.io/cloud-builders/gcs-fetcher:latest
 gcr.io/google.com/cloudsdktool/cloud-sdk:325.0.0-slim
+
+gitea/gitea:1
