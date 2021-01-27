@@ -22,3 +22,4 @@ gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/controller:v0.11.1
 gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/eventlistenersink:v0.11.1
 gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/interceptors:v0.11.1
 gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/webhook:v0.11.1
+gcr.io/google_containers/autoscaling/cluster-autoscaler:v1.18.3
