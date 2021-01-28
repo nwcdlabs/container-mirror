@@ -15,3 +15,8 @@
 # 提交新的images时，请删除旧的images
 
 gitea/gitea:1
+quay.io/prometheus/alertmanager:v0.21.0
+quay.io/prometheus/node-exporter:v1.0.1
+quay.io/prometheus/prometheus:v2.24.0
+prom/pushgateway:v1.3.1
+jimmidyson/configmap-reload:v0.4.0
