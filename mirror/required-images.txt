@@ -12,12 +12,6 @@
 ## images defined - https://github.com/aws/aws-node-termination-handler/blob/79bf81f618de474f86636120a40438a47a4e2869/config/helm/aws-node-termination-handler/values.yaml#L5-L7
 #amazon/aws-node-termination-handler:v1.3.1
 
-k8s.gcr.io/autoscaling/cluster-autoscaler:v1.18.3
+# 提交新的images时，请删除旧的images
 
-gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/git-init:v0.20.1
-gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/entrypoint:v0.20.1
-gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/nop:v0.20.1
-gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/imagedigestexporter:v0.20.1
-gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/pullrequest-init:v0.20.1
-gcr.io/cloud-builders/gcs-fetcher:latest
-gcr.io/google.com/cloudsdktool/cloud-sdk:325.0.0-slim
+gitea/gitea:1
