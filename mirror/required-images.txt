@@ -16,4 +16,5 @@
 ## name - gitea/gitea
 ## see - https://gitea.com/gitea/helm-chart/
 ## images defined - https://gitea.com/gitea/helm-chart/src/tag/v2.1.9/values.yaml#L9-L12
-envoyproxy/envoy-alpine:v1.14.6
+quay.io/k8scsi/csi-attacher:v3.0.0
+quay.io/k8scsi/csi-provisioner:v2.0.2
