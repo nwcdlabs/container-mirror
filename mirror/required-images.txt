@@ -5,7 +5,6 @@
 #
 # 3. delete old images in this txt
 
-
 # Example
 ## name - aws/node-termination-handler for Amazon EKS
 ## see - https://github.com/aws/aws-node-termination-handler
@@ -17,4 +16,4 @@
 ## name - gitea/gitea
 ## see - https://gitea.com/gitea/helm-chart/
 ## images defined - https://gitea.com/gitea/helm-chart/src/tag/v2.1.9/values.yaml#L9-L12
-gitea/gitea:1.13.1
+envoyproxy/envoy-alpine:v1.14.6
