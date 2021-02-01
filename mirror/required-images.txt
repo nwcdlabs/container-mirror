@@ -13,4 +13,8 @@
 #amazon/aws-node-termination-handler:v1.3.1
 
 # 提交新的images时，请删除旧的images
-gitlab/gitlab-runner:v13.8.0
+
+## name - gitea/gitea
+## see - https://gitea.com/gitea/helm-chart/
+## images defined - https://gitea.com/gitea/helm-chart/src/tag/v2.1.9/values.yaml#L9-L12
+gitea/gitea:1.13.1
