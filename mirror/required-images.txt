@@ -16,7 +16,5 @@
 ## name - gitea/gitea
 ## see - https://gitea.com/gitea/helm-chart/
 ## images defined - https://gitea.com/gitea/helm-chart/src/tag/v2.1.9/values.yaml#L9-L12
-quay.io/k8scsi/csi-node-driver-registrar:v2.0.1
-quay.io/jetstack/cert-manager-cainjector:v1.1.0
-quay.io/jetstack/cert-manager-controller:v1.1.0
-quay.io/jetstack/cert-manager-webhook:v1.1.0
+quay.io/prometheus-operator/prometheus-operator:v0.45.0
+quay.io/brancz/kube-rbac-proxy:v0.8.0
