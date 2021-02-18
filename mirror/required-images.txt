@@ -16,4 +16,4 @@
 ## name - amazon/aws-efs-csi-driver
 ## see - https://github.com/kubernetes-sigs/aws-efs-csi-driver/tree/release-1.1
 ## images defined - https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/a0259de7d7a9a654d28bc949b2bcc32fe244d0a0/helm/values.yaml#L9
-amazon/aws-efs-csi-driver:v1.1.1
+gcr.io/google_containers/metrics-server:v0.4.1
