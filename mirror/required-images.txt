@@ -13,7 +13,9 @@
 
 # 提交新的images时，请删除旧的images
 
-## name - amazon/aws-efs-csi-driver
-## see - https://github.com/kubernetes-sigs/aws-efs-csi-driver/tree/release-1.1
-## images defined - https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/a0259de7d7a9a654d28bc949b2bcc32fe244d0a0/helm/values.yaml#L9
-amazon/aws-efs-csi-driver:v1.1.1
+## name - quay.io/jetstack/cert-manager-controller
+## see - https://cert-manager.io
+## images defined - https://github.com/jetstack/cert-manager/blob/v1.2.0/deploy/charts/cert-manager/values.yaml
+quay.io/jetstack/cert-manager-cainjector:v1.2.0
+quay.io/jetstack/cert-manager-controller:v1.2.0
+quay.io/jetstack/cert-manager-webhook:v1.2.0
