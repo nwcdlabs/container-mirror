@@ -12,10 +12,8 @@
 #amazon/aws-node-termination-handler:v1.3.1
 
 # 提交新的images时，请删除旧的images
+## name - k8s.gcr.io/metrics-server/metrics-server
+## see - https://github.com/kubernetes-sigs/metrics-server/releases
+## images defined - https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.4.1/components.yaml
+k8s.gcr.io/metrics-server/metrics-server:v0.4.1
 
-## name - quay.io/jetstack/cert-manager-controller
-## see - https://cert-manager.io
-## images defined - https://github.com/jetstack/cert-manager/blob/v1.2.0/deploy/charts/cert-manager/values.yaml
-quay.io/jetstack/cert-manager-cainjector:v1.2.0
-quay.io/jetstack/cert-manager-controller:v1.2.0
-quay.io/jetstack/cert-manager-webhook:v1.2.0
