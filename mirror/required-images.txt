@@ -12,8 +12,8 @@
 #amazon/aws-node-termination-handler:v1.3.1
 
 # 提交新的images时，请删除旧的images
+## name - k8s.gcr.io/metrics-server/metrics-server
+## see - https://github.com/kubernetes-sigs/metrics-server/releases
+## images defined - https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.4.1/components.yaml
+k8s.gcr.io/metrics-server/metrics-server:v0.4.1
 
-## name - amazon/aws-efs-csi-driver
-## see - https://github.com/kubernetes-sigs/aws-efs-csi-driver/tree/release-1.1
-## images defined - https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/a0259de7d7a9a654d28bc949b2bcc32fe244d0a0/helm/values.yaml#L9
-amazon/aws-efs-csi-driver:v1.1.1
