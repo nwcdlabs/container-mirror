@@ -15,5 +15,7 @@
 ## name - k8s.gcr.io/metrics-server/metrics-server
 ## see - https://github.com/kubernetes-sigs/metrics-server/releases
 ## images defined - https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.4.1/components.yaml
-k8s.gcr.io/metrics-server/metrics-server:v0.4.1
-
+name - amazon/cloudwatch-agent
+see - https://hub.docker.com/r/amazon/cloudwatch-agent
+images defined - https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/quickstart/cwagent-fluent-bit-quickstart.yaml 
+amazon/cloudwatch-agent:1.247347.4b250525
