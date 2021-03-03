@@ -12,10 +12,7 @@
 #amazon/aws-node-termination-handler:v1.3.1
 
 # 提交新的images时，请删除旧的images
-## name - k8s.gcr.io/metrics-server/metrics-server
-## see - https://github.com/kubernetes-sigs/metrics-server/releases
-## images defined - https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.4.1/components.yaml
-name - amazon/cloudwatch-agent
-see - https://hub.docker.com/r/amazon/cloudwatch-agent
-images defined - https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/quickstart/cwagent-fluent-bit-quickstart.yaml 
-amazon/cloudwatch-agent:1.247347.4b250525
+#name - jimmidyson/configmap-reload
+#see - https://hub.docker.com/r/jimmidyson/configmap-reload
+#images defined - https://github.com/prometheus-community/helm-charts
+jimmidyson/configmap-reload:v0.5.0
