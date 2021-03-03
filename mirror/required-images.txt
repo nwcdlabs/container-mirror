@@ -12,10 +12,7 @@
 #amazon/aws-node-termination-handler:v1.3.1
 
 # 提交新的images时，请删除旧的images
-## name - k8s.gcr.io/metrics-server/metrics-server
-## see - https://github.com/kubernetes-sigs/metrics-server/releases
-## images defined - https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.4.1/components.yaml
-name - jimmidyson/configmap-reload
-see - https://hub.docker.com/r/jimmidyson/configmap-reload
-images defined - https://github.com/prometheus-community/helm-charts
+#name - jimmidyson/configmap-reload
+#see - https://hub.docker.com/r/jimmidyson/configmap-reload
+#images defined - https://github.com/prometheus-community/helm-charts
 jimmidyson/configmap-reload:v0.5.0
