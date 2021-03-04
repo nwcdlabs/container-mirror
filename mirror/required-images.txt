@@ -12,7 +12,4 @@
 #amazon/aws-node-termination-handler:v1.3.1
 
 # 提交新的images时，请删除旧的images
-#name - jimmidyson/configmap-reload
-#see - https://hub.docker.com/r/jimmidyson/configmap-reload
-#images defined - https://github.com/prometheus-community/helm-charts
-jimmidyson/configmap-reload:v0.5.0
+gcr.io/google_containers/metrics-server:v0.4.2
