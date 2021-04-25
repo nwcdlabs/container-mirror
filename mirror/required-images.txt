@@ -13,6 +13,36 @@
 
 # 提交新的images时，请删除旧的images
 
-# Kubesphere Install
-csiplugin/snapshot-controller:v2.0.1
+# Kubesphere Install 20210425
+istio/citadel:1.4.8
+istio/galley:1.4.8 
+istio/proxyv2:1.4.8
+istio/kubectl:1.4.8
+istio/pilot:1.4.8
+istio/proxyv2:1.4.8
+istio/mixer:1.4.8
+istio/sidecar_injector:1.4.8
+jaegertracing/jaeger-collector:1.17
+jaegertracing/jaeger-es-index-cleaner:1.17.1
+jaegertracing/jaeger-operator:1.17.1
+jaegertracing/jaeger-query:1.17
+kubesphere/alerting:v2.1.2
+kubesphere/alerting-dbinit:v3.0.0
+kubesphere/alert-adapter:v3.0.0
+kubesphere/notification:flyway_v2.1.2
 kubesphere/kubectl:v1.0.0
+kubesphere/jenkins-uc:v3.0.0
+kubesphere/elasticsearch-curator:v5.7.6
+kubesphere/elasticsearch-oss:6.7.0-1
+kubesphere/fluent-bit:v1.4.6
+kubesphere/fluentbit-operator:v0.2.0
+kubesphere/kube-events-exporter:v0.1.0
+kubesphere/kube-events-ruler:v0.1.0
+kubesphere/kube-auditing-operator:v0.1.0
+kubesphere/kube-auditing-webhook:v0.1.0
+kubesphere/log-sidecar-injector:1.1
+kubesphere/etcd:v3.2.18
+openpitrix/generate-kubeconfig:v0.5.0
+openpitrix/release-app:v0.5.0
+openpitrix/openpitrix:flyway-v0.5.0
+openpitrix/openpitrix:v0.5.0
