@@ -13,6 +13,9 @@
 
 # 提交新的images时，请删除旧的images
 
+# k8s cluster-autoscaler 20210425
+gcr.io/k8s-artifacts-prod/autoscaling/cluster-autoscaler:v1.18.1
+
 # Kubesphere Install 20210425
 istio/citadel:1.4.8
 istio/galley:1.4.8 
