@@ -14,9 +14,5 @@
 # 提交新的images时，请删除旧的images
 
 
-## name - istio operator
-## set - https://github.com/istio/istio/tree/master/operator
-## images defined - https://github.com/istio/istio/blob/master/manifests/charts/istio-operator/values.yaml
-gcr.io/istio-release/operator:1.9.2
-gcr.io/istio-release/operator:1.9.3
-gcr.io/istio-release/operator:1.9.4
+## Kubeedge
+kubeedge/cloudcore:v1.6.1
