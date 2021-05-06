@@ -13,9 +13,12 @@
 
 # 提交新的images时，请删除旧的images
 
-## name - kube-state-metrics
-## set - https://github.com/kubernetes/kube-state-metrics
-## iamges defined - https://github.com/kubernetes/kube-state-metrics/blob/master/charts/kube-state-metrics/values.yaml
-k8s.gcr.io/kube-state-metrics/kube-state-metrics:v1.9.8
-k8s.gcr.io/kube-state-metrics/kube-state-metrics:v2.0.0
+
+## name - quay.io/jetstack/cert-manager-controller
+## see - https://cert-manager.io
+## images defined - https://github.com/jetstack/cert-manager/blob/v1.3.1/deploy/charts/cert-manager/values.yaml
+#quay.io/jetstack/cert-manager-cainjector:v1.3.1
+#quay.io/jetstack/cert-manager-controller:v1.3.1
+#quay.io/jetstack/cert-manager-webhook:v1.3.1
+quay.io/jetstack/cert-manager-acmesolver:v1.3.1
 
