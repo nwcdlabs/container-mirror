@@ -14,5 +14,8 @@
 # 提交新的images时，请删除旧的images
 
 
-## Kubeedge
-kubeedge/cloudcore:v1.6.1
+## ClickHouse
+yandex/clickhouse-server:19.3.7
+altinity/clickhouse-operator:0.14.0
+altinity/metrics-exporter:0.14.0
+
