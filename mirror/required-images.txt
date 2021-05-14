@@ -1,5 +1,5 @@
 # update kubecost
 gcr.io/kubecost1/cost-model:prod-1.80.0
-gcr.io/kubecost1/frontend
-gcr.io/kubecost1/server
+gcr.io/kubecost1/frontend:prod-1.80.0
+gcr.io/kubecost1/server:prod-1.80.0
 gcr.io/kubecost1/kubecost-network-costs:v15.3
