@@ -1,21 +1,5 @@
-#
-# 1. check required-images-mirrored.txt for mirrored image list
-# 
-# 2. please add additional required images below
-#
-# 3. delete old images in this txt
-
-# Example
-## name - aws/node-termination-handler for Amazon EKS
-## see - https://github.com/aws/aws-node-termination-handler
-## images defined - https://github.com/aws/aws-node-termination-handler/blob/79bf81f618de474f86636120a40438a47a4e2869/config/helm/aws-node-termination-handler/values.yaml#L5-L7
-#amazon/aws-node-termination-handler:v1.3.1
-
-# 提交新的images时，请删除旧的images
-
-
-## ClickHouse
-yandex/clickhouse-server:19.3.7
-altinity/clickhouse-operator:0.14.0
-altinity/metrics-exporter:0.14.0
-
+# update kubecost
+gcr.io/kubecost1/cost-model:prod-1.80.0
+gcr.io/kubecost1/frontend
+gcr.io/kubecost1/server
+gcr.io/kubecost1/kubecost-network-costs:v15.3
