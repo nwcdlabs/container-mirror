@@ -14,4 +14,5 @@
 # 此行以及以上内容请勿删除。新images在此行下添加。提交新的images时，请删除旧的images
 
 # update eventrouter
-gcr.io/heptio-images/eventrouter:v0.3
+gcr.io/google-containers/pause:2.0
+jicowan/ssm-agent-installer:1.2
