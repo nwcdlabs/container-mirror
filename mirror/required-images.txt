@@ -13,6 +13,7 @@
 
 # 此行以及以上内容请勿删除。新images在此行下添加。提交新的images时，请删除旧的images
 
-# images for install ssm agent as daemonset
-gcr.io/google-containers/pause:2.0
-jicowan/ssm-agent-installer:1.2
+# update spark-operator
+gcr.io/spark-operator/spark-operator:latest
+gcr.io/spark-operator/spark-operator:v1beta2-1.2.3-3.1.1
+
