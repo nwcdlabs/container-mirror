@@ -3,22 +3,15 @@
 # 
 # 2. please add additional required images below
 #
+# 3. delete old images in this txt
+
 # Example
-#
 ## name - aws/node-termination-handler for Amazon EKS
 ## see - https://github.com/aws/aws-node-termination-handler
 ## images defined - https://github.com/aws/aws-node-termination-handler/blob/79bf81f618de474f86636120a40438a47a4e2869/config/helm/aws-node-termination-handler/values.yaml#L5-L7
 #amazon/aws-node-termination-handler:v1.3.1
 
-#EBS CSI Driver v0.8.0
-k8s.gcr.io/provider-aws/aws-ebs-csi-driver:v0.8.0
-quay.io/k8scsi/csi-provisioner:v1.5.0
-quay.io/k8scsi/csi-attacher:v2.2.0
-quay.io/k8scsi/livenessprobe:v2.1.0
-
-#Kubeflow pipeline cache-server 1.0.4
-gcr.io/ml-pipeline/cache-server:1.0.4
-
+# 此行以及以上内容请勿删除。新images在此行下添加。提交新的images时，请删除旧的images
 
 #Knative v0.15.0
 gcr.io/knative-releases/knative.dev/serving/cmd/controller:v0.15.0
@@ -26,5 +19,4 @@ gcr.io/knative-releases/knative.dev/serving/cmd/webhook:v0.15.0
 gcr.io/knative-releases/knative.dev/serving/cmd/autoscaler:v0.15.0
 gcr.io/knative-releases/knative.dev/serving/cmd/autoscaler-hpa:v0.15.0
 gcr.io/knative-releases/knative.dev/serving/cmd/queue:v0.15.0
-
 
