@@ -13,5 +13,5 @@
 
 # 此行以及以上内容请勿删除。新images在此行下添加。提交新的images时，请删除旧的images
 
-# Metrics Server
-k8s.gcr.io/metrics-server/metrics-server:v0.5.0
+# AWS EFS CSI Driver
+amazon/aws-efs-csi-driver:v1.3.2
