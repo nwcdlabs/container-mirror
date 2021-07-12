@@ -10,8 +10,9 @@
 ## see - https://github.com/aws/aws-node-termination-handler
 ## images defined - https://github.com/aws/aws-node-termination-handler/blob/79bf81f618de474f86636120a40438a47a4e2869/config/helm/aws-node-termination-handler/values.yaml#L5-L7
 #amazon/aws-node-termination-handler:v1.3.1
-
 # 此行以及以上内容请勿删除。新images在此行下添加。提交新的images时，请删除旧的images
 
-# AWS EFS CSI Driver
-amazon/aws-efs-csi-driver:v1.3.2
+# name - k8s.gcr.io/ingress-nginx/controller
+# see - https://github.com/kubernetes/ingress-nginx/releases
+# images defined - https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.40.2/deploy/static/provider/aws/deploy.yaml
+k8s.gcr.io/ingress-nginx/controller:v0.40.2
