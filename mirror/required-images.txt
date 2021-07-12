@@ -11,11 +11,8 @@
 ## images defined - https://github.com/aws/aws-node-termination-handler/blob/79bf81f618de474f86636120a40438a47a4e2869/config/helm/aws-node-termination-handler/values.yaml#L5-L7
 #amazon/aws-node-termination-handler:v1.3.1
 
-# 提交新的images时，请删除旧的images
-## name - k8s.gcr.io/metrics-server/metrics-server
-## see - https://github.com/kubernetes-sigs/metrics-server/releases
-## images defined - https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.4.1/components.yaml
-name - amazon/cloudwatch-agent
-see - https://hub.docker.com/r/amazon/cloudwatch-agent
-images defined - https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/quickstart/cwagent-fluent-bit-quickstart.yaml 
-amazon/cloudwatch-agent:1.247347.4b250525
+
+name - k8s.gcr.io/ingress-nginx/controller
+see - https://github.com/kubernetes/ingress-nginx/releases
+images defined - https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.40.2/deploy/static/provider/aws/deploy.yaml
+k8s.gcr.io/ingress-nginx/controller:v0.40.2
