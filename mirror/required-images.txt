@@ -25,3 +25,4 @@ prom/prometheus:v2.24.0
 jimmidyson/configmap-reload:v0.5.0
 jaegertracing/all-in-one:1.20
 quay.io/kiali/kiali:v1.34
+quay.io/jetstack/cert-manager-cainjector:v1.1.1
