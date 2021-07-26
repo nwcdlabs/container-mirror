@@ -13,6 +13,5 @@
 # 此行以及以上内容请勿删除。新images在此行下添加。提交新的images时，请删除旧的images
 
 
-quay.io/jetstack/cert-manager-cainjector:v1.1.1
-quay.io/jetstack/cert-manager-webhook:v1.1.1
-quay.io/jetstack/cert-manager-controller:v1.1.1
+k8s.gcr.io/provider-aws/aws-ebs-csi-driver:v1.1.1
+k8s.gcr.io/sig-storage/csi-node-driver-registrar:v2.1.0
