@@ -12,4 +12,5 @@
 #amazon/aws-node-termination-handler:v1.3.1
 # 此行以及以上内容请勿删除。新images在此行下添加。提交新的images时，请删除旧的images
 
-gcr.io/kaniko-project/executor:v1.6.0-debug
+# AWS EBS CSI Driver Update 20210811
+aws-ebs-csi-driver:v1.2.0
