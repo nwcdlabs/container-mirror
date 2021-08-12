@@ -11,6 +11,7 @@ allEcrRepos=$(aws --profile=ChinaECR --region $ECR_REGION ecr describe-repositor
 function replaceDomainName(){
   URI="$1"
   URI=${URI/#quay/quay.io}
+  URI=${URI/#gcr\/google_containers/k8s.gcr.io}
   URI=${URI/#gcr/gcr.io}
   URI=${URI/#amazonecr/602401143452.dkr.ecr.us-west-2.amazonaws.com}
   URI=${URI/#dockerhub\//}
