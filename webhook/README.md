@@ -8,13 +8,13 @@
 - 如果您是自己搭建的Kubernetes，请确保
     - 您的Kubernetes集群版本为1.9或以上.
     - Kubernetes的MutatingAdmissionWebhook admission controllers 功能已打开
-    - admissionregistration.k8s.io/v1beta1 API 启用.
+    - admissionregistration.k8s.io/v1 API 启用.
 
 ### 部署 webhook
 ### 方法1：Kubernetes mutating admission webhook 直接使用本项目托管 Amazon API Gateway
 1. 本项目已经部署了一个托管 Amazon API Gateway，使用以下命令即可直接部署 WebHook，并指向托管 Amazon API Gateway。
 ```bash
-kubectl apply -f webhook/mutating-webhook.yaml
+kubectl apply -f mutating-webhook.yaml
 #kubectl apply -f https://raw.githubusercontent.com/nwcdlabs/container-mirror/master/webhook/mutating-webhook.yaml
 ```
 
@@ -30,13 +30,12 @@ kubectl delete pod test
 
 ### 方法2：自己部署Amazon API Gateway
 如果您期望部署自己的 Amazon API Gateway 用于 webhook, 按照下列步骤：
-1. 使用CloudFormation模板文件 webhook/api-gateway.yaml 在 AWS CloudFormation Console 上部署 Amazon API Gateway 以及相关资源，CloudFormation Stack 使用默认参数即可。
+1. 使用CloudFormation模板文件 api-gateway.yaml 在 AWS CloudFormation Console 上部署 Amazon API Gateway 以及相关资源，CloudFormation Stack 使用默认参数即可。
 2. 创建 Kubernetes Mutating Webhook Configuration资源
     - 在第一步创建的CloudFormation stack完成后，在输出结果中找到 APIGateWayURL。
-    - 修改 webhook/mutating-webhook.yaml，将 webhooks.clientConfig.url 的值替换为上面找到的APIGateWayURL值。
+    - 修改 mutating-webhook.yaml，将 webhooks.clientConfig.url 的值替换为上面找到的APIGateWayURL值。
     - 创建 Kubernetes resource:
         ```bash
-        cd webhook/
         kubectl apply -f mutating-webhook.yaml
         ```
 
