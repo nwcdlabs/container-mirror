@@ -1,16 +1,41 @@
 #!/bin/bash
 source mirror-base.sh
 
-mytime=$(date "+%H")
-file_index=$[$mytime / 3]
-IMAGES_DAILY_FILE_LIST="required-images-daily/${file_index}.txt"
-
-echo "current index:${file_index}"
-
+IMAGES_DAILY_FILE_LIST="required-images-daily.txt"
 images=$(grep -v ^# $IMAGES_DAILY_FILE_LIST)
 #images="golang"
+
+count=0
 for image in ${images[@]}
 do
+  count=$[$count + 1]
+done
+echo "count:${count}"
+mytime=$(date "+%H")
+split_index=$[$mytime / 3]
+echo "split_index:${split_index}"
+split_size=$[$[$count / 8] + 1]
+echo "split_size:${split_size}"
+begin=$[split_index * split_size]
+end=$[$[split_index + 1] * split_size ]
+echo "begin:${begin}"
+echo "end:${end}"
+current_index=0
+for image in ${images[@]}
+do
+  if [ $current_index -lt $begin ]
+  then
+    current_index=$[$current_index + 1]
+    continue
+  fi
+  
+  if [ $current_index == $end ]
+  then
+    break
+  fi
+  
+  current_index=$[$current_index + 1]
+  
   repo=`echo ${image}|cut -d: -f1`
   echo "************begin pull ${repo} all tag************"
   date
