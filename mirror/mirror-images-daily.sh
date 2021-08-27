@@ -5,6 +5,8 @@ mytime=$(date "+%H")
 file_index=$[$mytime / 3]
 IMAGES_DAILY_FILE_LIST="required-images-daily/${file_index}.txt"
 
+echo "current index:${file_index}"
+
 images=$(grep -v ^# $IMAGES_DAILY_FILE_LIST)
 #images="golang"
 for image in ${images[@]}
