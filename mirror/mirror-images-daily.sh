@@ -1,7 +1,9 @@
 #!/bin/bash
 source mirror-base.sh
 
-IMAGES_DAILY_FILE_LIST='required-images-daily.txt'
+mytime=$(date "+%H")
+file_index=$[$mytime / 3]
+IMAGES_DAILY_FILE_LIST="required-images-daily/${file_index}.txt"
 
 images=$(grep -v ^# $IMAGES_DAILY_FILE_LIST)
 #images="golang"
