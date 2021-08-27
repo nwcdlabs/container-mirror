@@ -12,6 +12,7 @@ do
 done
 echo "count:${count}"
 mytime=$(date "+%H")
+mytime="$((10#$mytime))"
 split_index=$[$mytime / 3]
 echo "split_index:${split_index}"
 split_size=$[$[$count / 8] + 1]
