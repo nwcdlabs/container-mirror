@@ -12,7 +12,7 @@
 #amazon/aws-node-termination-handler:v1.3.1
 # 此行以及以上内容请勿删除。新images在此行下添加。提交新的images时，请删除旧的images
 
-debian:stable
-debian:testing
-debian:stable-20210816
-debian:testing-20210816
+k8s.gcr.io/kube-controller-manager:v1.18.15
+k8s.gcr.io/kube-proxy:v1.18.15
+k8s.gcr.io/etcdadm/etcd-manager:3.0.20210430
+k8s.gcr.io/kube-scheduler:v1.18.15
