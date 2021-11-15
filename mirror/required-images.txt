@@ -15,3 +15,6 @@
 kubernetesui/metrics-scraper:v1.0.6
 kubernetesui/dashboard:v2.3.1
 k8s.gcr.io/kube-state-metrics/kube-state-metrics:v2.2.0
+public.ecr.aws/appmesh/aws-appmesh-envoy:v1.19.1.0-prod
+840364872350.dkr.ecr.us-west-2.amazonaws.com/aws-appmesh-proxy-route-manager:v3-prod
+
