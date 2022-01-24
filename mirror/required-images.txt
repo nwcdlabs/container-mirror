@@ -12,4 +12,4 @@
 #amazon/aws-node-termination-handler:v1.3.1
 # 此行以及以上内容请勿删除。新images在此行下添加。提交新的images时，请删除旧的images
 
-fluent/fluentd-kubernetes-daemonset:v1.13-debian-elasticsearch7-1
+k8s.gcr.io/node-problem-detector/node-problem-detector:v0.8.6
