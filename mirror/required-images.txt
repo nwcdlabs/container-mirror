@@ -12,7 +12,4 @@
 #amazon/aws-node-termination-handler:v1.3.1
 # 此行以及以上内容请勿删除。新images在此行下添加。提交新的images时，请删除旧的images
 
-k8s.gcr.io/kube-state-metrics/kube-state-metrics:v1.9.8
-gcr.io/kubecost1/cost-model:prod-1.89.1
-gcr.io/kubecost1/frontend:prod-1.89.1
-gcr.io/kubecost1/server:prod-1.89.1
+k8s.gcr.io/kube-state-metrics/kube-state-metrics:v2.4.1
