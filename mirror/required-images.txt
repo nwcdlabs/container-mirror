@@ -17,10 +17,12 @@
 # gcr.io/kubecost1/frontend:prod-1.89.1
 # gcr.io/kubecost1/server:prod-1.89.1
 
-quay.io/keycloak/keycloak:18.0.1
-quay.io/keycloak/keycloak:16.1.1
-k8s.gcr.io/kube-state-metrics/kube-state-metrics:v1.9.8
-gcr.io/kubecost1/cost-model:prod-1.89.1
-gcr.io/kubecost1/frontend:prod-1.89.1
-gcr.io/kubecost1/server:prod-1.89.1
-k8s.gcr.io/metrics-server/metrics-server:v0.6.1
+# quay.io/keycloak/keycloak:18.0.1
+# quay.io/keycloak/keycloak:16.1.1
+# k8s.gcr.io/kube-state-metrics/kube-state-metrics:v1.9.8
+# gcr.io/kubecost1/cost-model:prod-1.89.1
+# gcr.io/kubecost1/frontend:prod-1.89.1
+# gcr.io/kubecost1/server:prod-1.89.1
+# k8s.gcr.io/metrics-server/metrics-server:v0.6.1
+
+jboss/keycloak:16.1.1
