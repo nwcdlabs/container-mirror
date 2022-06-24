@@ -12,4 +12,5 @@
 #amazon/aws-node-termination-handler:v1.3.1
 # 此行以及以上内容请勿删除。新images在此行下添加。提交新的images时，请删除旧的images
 
-amazon/cloudwatch-agent:1.247350.0b251780
+k8s.gcr.io/kube-state-metrics/kube-state-metrics:v2.4.1
+k8s.gcr.io/ingress-nginx/kube-webhook-certgen:v1.1.1
