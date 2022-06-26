@@ -20,7 +20,7 @@ kubectl apply -f mutating-webhook.yaml
 
 2. 验证 pod 详细信息中的image 已经替换为本项目对应的 ECR 镜像仓库。
 ```bash
-kubectl run --generator=run-pod/v1 test --image=k8s.gcr.io/coredns:1.3.1
+kubectl run test --image=k8s.gcr.io/coredns:1.3.1
 kubectl get pod test -o=jsonpath='{.spec.containers[0].image}'
 # 结果应显示为048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/google_containers/coredns:1.3.1
 
