@@ -12,4 +12,14 @@
 #amazon/aws-node-termination-handler:v1.3.1
 # 此行以及以上内容请勿删除。新images在此行下添加。提交新的images时，请删除旧的images
 
-k8s.gcr.io/e2e-test-images/echoserver:2.5
+quay.io/prometheus/alertmanager:v0.24.0
+jimmidyson/configmap-reload:v0.5.0
+jimmidyson/configmap-reload:v0.5.0
+quay.io/prometheus/node-exporter:v1.3.1
+quay.io/prometheus/prometheus:v2.36.2
+prom/pushgateway:v1.4.3
+curlimages/curl:v7.73.0
+busybox:v1.31.1
+quay.io/kiwigrid/k8s-sidecar:v1.19.2
+grafana/grafana-image-renderer:latest
+grafana/grafana:v6.32.2
