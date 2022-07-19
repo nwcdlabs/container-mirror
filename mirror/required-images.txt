@@ -11,15 +11,3 @@
 ## images defined - https://github.com/aws/aws-node-termination-handler/blob/79bf81f618de474f86636120a40438a47a4e2869/config/helm/aws-node-termination-handler/values.yaml#L5-L7
 #amazon/aws-node-termination-handler:v1.3.1
 # 此行以及以上内容请勿删除。新images在此行下添加。提交新的images时，请删除旧的images
-
-quay.io/prometheus/alertmanager:v0.24.0
-jimmidyson/configmap-reload:v0.5.0
-jimmidyson/configmap-reload:v0.5.0
-quay.io/prometheus/node-exporter:v1.3.1
-quay.io/prometheus/prometheus:v2.36.2
-prom/pushgateway:v1.4.3
-curlimages/curl:v7.73.0
-busybox:v1.31.1
-quay.io/kiwigrid/k8s-sidecar:v1.19.2
-grafana/grafana-image-renderer:latest
-grafana/grafana:v6.32.2
