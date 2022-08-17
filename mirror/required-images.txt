@@ -14,3 +14,4 @@
 
 k8s.gcr.io/ingress-nginx/controller:v1.3.0
 k8s.gcr.io/ingress-nginx/kube-webhook-certgen:v1.1.1
+quay.io/travelaudience/docker-nexus:3.38.1-01
