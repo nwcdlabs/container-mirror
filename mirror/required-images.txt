@@ -16,3 +16,4 @@ apache/airflow:2.3.1
 apache/airflow:airflow-pgbouncer-2021.04.28-1.14.0
 apache/airflow:airflow-pgbouncer-exporter-2021.09.22-0.12.0
 k8s.gcr.io/git-sync/git-sync:v3.4.0
+k8s.gcr.io/ingress-nginx/kube-webhook-certgen:v1.2.0
