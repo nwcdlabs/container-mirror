@@ -12,5 +12,4 @@
 #amazon/aws-node-termination-handler:v1.3.1
 # 此行以及以上内容请勿删除。新images在此行下添加。提交新的images时，请删除旧的images
 
-k8s.gcr.io/sig-storage/csi-resizer:v1.1.0
-amazon/aws-ebs-csi-driver:v1.4.0
+gcr.io/spark-operator/spark:v3.1.1
