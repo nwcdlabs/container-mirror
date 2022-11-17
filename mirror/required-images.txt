@@ -12,6 +12,9 @@
 #amazon/aws-node-termination-handler:v1.3.1
 # 此行以及以上内容请勿删除。新images在此行下添加。提交新的images时，请删除旧的images
 
-k8s.gcr.io/ingress-nginx/controller:v1.3.0
-k8s.gcr.io/ingress-nginx/kube-webhook-certgen:v1.1.1
-quay.io/travelaudience/docker-nexus:3.38.1-01
+ghcr.io/fluxcd/helm-controller:v0.26.0
+ghcr.io/fluxcd/image-automation-controller:v0.26.1
+ghcr.io/fluxcd/image-reflector-controller:v0.22.1
+ghcr.io/fluxcd/kustomize-controller:v0.30.0
+ghcr.io/fluxcd/notification-controller:v0.28.0
+ghcr.io/fluxcd/source-controller:v0.31.0
