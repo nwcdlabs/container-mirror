@@ -163,3 +163,9 @@ jobber
 scratch
 caddy
 cheers
+fluxcd/helm-controller
+fluxcd/image-automation-controller
+fluxcd/image-reflector-controller
+fluxcd/kustomize-controller
+fluxcd/notification-controller
+fluxcd/source-controller
