@@ -13,8 +13,8 @@
 # 此行以及以上内容请勿删除。新images在此行下添加。提交新的images时，请删除旧的images
 
 fluxcd/helm-controller:v0.27.0
-fluxcd/image-automation-controller:v0.27.1
-fluxcd/image-reflector-controller:v0.23.1
+fluxcd/image-automation-controller:v0.27.0
+fluxcd/image-reflector-controller:v0.23.0
 fluxcd/kustomize-controller:v0.31.0
 fluxcd/notification-controller:v0.29.0
 fluxcd/source-controller:v0.32.1
