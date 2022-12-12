@@ -19,3 +19,4 @@ fluxcd/kustomize-controller:v0.31.0
 fluxcd/notification-controller:v0.29.0
 fluxcd/source-controller:v0.32.1
 
+registry.k8s.io/ingress-nginx/controller:v1.3.1
