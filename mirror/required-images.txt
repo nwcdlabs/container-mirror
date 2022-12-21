@@ -20,3 +20,7 @@ fluxcd/notification-controller:v0.29.0
 fluxcd/source-controller:v0.32.1
 
 registry.k8s.io/ingress-nginx/controller:v1.3.1
+
+quay.io/jetstack/cert-manager-cainjector:v1.5.4
+quay.io/jetstack/cert-manager-controller:v1.5.4
+quay.io/jetstack/cert-manager-webhook:v1.5.4
