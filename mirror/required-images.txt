@@ -12,15 +12,7 @@
 #amazon/aws-node-termination-handler:v1.3.1
 # 此行以及以上内容请勿删除。新images在此行下添加。提交新的images时，请删除旧的images
 
-fluxcd/helm-controller:v0.27.0
-fluxcd/image-automation-controller:v0.27.0
-fluxcd/image-reflector-controller:v0.23.0
-fluxcd/kustomize-controller:v0.31.0
-fluxcd/notification-controller:v0.29.0
-fluxcd/source-controller:v0.32.1
-
-registry.k8s.io/ingress-nginx/controller:v1.3.1
-
-quay.io/jetstack/cert-manager-cainjector:v1.5.4
-quay.io/jetstack/cert-manager-controller:v1.5.4
-quay.io/jetstack/cert-manager-webhook:v1.5.4
+bitnami/spark:3.2.3
+bitnami/spark:3.3.0
+bitnami/spark:3.3.1
+bitnami/kubectl:1.24.9
