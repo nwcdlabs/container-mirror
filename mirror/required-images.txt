@@ -12,7 +12,7 @@
 #amazon/aws-node-termination-handler:v1.3.1
 # 此行以及以上内容请勿删除。新images在此行下添加。提交新的images时，请删除旧的images
 
-bitnami/spark:3.2.3
-bitnami/spark:3.3.0
-bitnami/spark:3.3.1
-bitnami/kubectl:1.24.9
+trinodb/trino:405
+trinodb/trino:398
+trinodb/trino:388
+trinodb/trino:378
