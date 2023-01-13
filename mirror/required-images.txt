@@ -16,3 +16,7 @@ bitnami/spark:3.2.3
 bitnami/spark:3.3.0
 bitnami/spark:3.3.1
 bitnami/kubectl:1.24.9
+
+895885662937.dkr.ecr.us-west-2.amazonaws.com/spark/emr-6.9.0:latest
+895885662937.dkr.ecr.us-west-2.amazonaws.com/notebook-spark/emr-6.9.0:latest
+895885662937.dkr.ecr.us-west-2.amazonaws.com/notebook-python/emr-6.9.0:latest
