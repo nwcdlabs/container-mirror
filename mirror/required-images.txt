@@ -17,5 +17,7 @@ trinodb/trino:398
 trinodb/trino:388
 trinodb/trino:378
 
+kubernetesui/dashboard:v2.4.0
 kubernetesui/dashboard:v2.7.0
+kubernetesui/metrics-scraper:v1.0.7
 kubernetesui/metrics-scraper:v1.0.8
