@@ -12,4 +12,16 @@
 #amazon/aws-node-termination-handler:v1.3.1
 # 此行以及以上内容请勿删除。新images在此行下添加。提交新的images时，请删除旧的images
 
-k8s.gcr.io/autoscaling/cluster-autoscaler:v1.26.1
+gerritcodereview/gerrit:3.7.4
+gerritcodereview/gerrit:3.8.2
+k8sgerrit/gerrit
+k8sgerrit/gerrit-init
+k8sgerrit/git-gc
+k8sgerrit/gerrit-master
+k8sgerrit/gerrit-replica
+k8sgerrit/gerrit-operator
+k8sgerrit/apache-git-http-backend
+k8sgerrit/fetch-job
+k8sgerrit/gerrit-slave
+k8sgerrit/mysql-replication-init
+k8sgerrit/gerrit-operator
