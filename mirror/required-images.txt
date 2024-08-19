@@ -25,3 +25,4 @@ k8sgerrit/fetch-job
 k8sgerrit/gerrit-slave
 k8sgerrit/mysql-replication-init
 k8sgerrit/gerrit-operator
+ollama/ollama:latest
