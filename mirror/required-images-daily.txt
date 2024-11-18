@@ -169,3 +169,6 @@ fluxcd/image-reflector-controller
 fluxcd/kustomize-controller
 fluxcd/notification-controller
 fluxcd/source-controller
+langgenius/dify-api
+langgenius/dify-web
+langgenius/dify-sandbox
