@@ -13,3 +13,6 @@
 # 此行以及以上内容请勿删除。新images在此行下添加。提交新的images时，请删除旧的images
 
 langfuse/langfuse:2
+langgenius/dify-api:0.14.2
+langgenius/dify-web:0.14.2
+langgenius/dify-sandbox:0.14.2
