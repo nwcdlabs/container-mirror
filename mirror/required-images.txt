@@ -16,3 +16,4 @@ langfuse/langfuse:2
 langgenius/dify-api:0.14.2
 langgenius/dify-web:0.14.2
 langgenius/dify-sandbox:0.14.2
+vllm/vllm-openai:v0.6.4.post1
