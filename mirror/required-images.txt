@@ -12,4 +12,4 @@
 #amazon/aws-node-termination-handler:v1.3.1
 # 此行以及以上内容请勿删除。新images在此行下添加。提交新的images时，请删除旧的images
 
-nvidia/cuda:11.7.1-cudnn8-runtime-ubuntu20.04
+nvidia/cuda:12.4.0-devel-ubuntu22.04
