@@ -12,6 +12,5 @@
 #amazon/aws-node-termination-handler:v1.3.1
 # 此行以及以上内容请勿删除。新images在此行下添加。提交新的images时，请删除旧的images
 
-langgenius/dify-api:0.15.3
-langgenius/dify-web:0.15.3
-langgenius/dify-sandbox:0.15.3
+lmsysorg/sglang:v0.4.3.post4-cu125
+vllm/vllm-openai:v0.7.3
