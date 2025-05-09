@@ -19,3 +19,4 @@ vllm/vllm-openai:v0.8.2
 lmsysorg/sglang:v0.4.4.post4-cu125
 lmsysorg/sglang:v0.4.5.post3-cu125
 lmsysorg/sglang:v0.4.6.post2-cu124
+lmsysorg/sglang:v0.4.4.post1-cu124
