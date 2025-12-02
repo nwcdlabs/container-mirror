@@ -23,3 +23,4 @@ langgenius/dify-plugin-daemon:0.0.7-local
 langgenius/dify-plugin-daemon:0.0.8-local
 langgenius/dify-plugin-daemon:0.0.9-local
 langgenius/dify-plugin-daemon:0.1.0-local
+vllm/vllm-openai:v0.11.0
